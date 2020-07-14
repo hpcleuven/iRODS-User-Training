@@ -325,7 +325,7 @@ synchronizes recursively the data from the iRODS collection foo1 to another iROD
 
 How does this command work? The command compares the checksum values and file sizes of the source and target files to determine whether synchronization is needed. 
 
-**Exercise 5:**
+**Exercise 6:**
 
 - Download mymessage collection to your VSC system (`iget -r mymessage`).
 - Add test1.txt file inside this directory.
@@ -333,8 +333,103 @@ How does this command work? The command compares the checksum values and file si
 - See the update in iRODS collection.
 
 ### Metadata
+Metadata is often called data about data and is used to facilitate data discovery to improve search and retrieval. iRODS provides the user with the possibility to create Attribute Value Unit triples and store them with the data. The triples are stored in the iCAT catalogue.
 
+Metadata attribute-value-units triples (AVUs) consist of an Attribute-Name, Attribute-Value, and an optional Attribute-Units.  They can be added via the 'add' command (and in other ways), and then queried to find matching objects.
 
+For each command, -d, -C, -R, or -u is used to specify which type of object to work with: dataobjs (iRODS files), collections, resources, or users.
 
+These triples are added to a database and are searchable so that we will explore how to create these AVUs triples for which we can search later.
 
+#### Create AVUs triples
+
+-	Annotate a data file:
+
+```sh
+imeta add -d example.txt 'distance' '10' 'meter'
+imeta add -d example.txt 'author' 'Tom'
+```
+
+We can leave ‘Unit' part is here empty because it is optional.
+
+-	Annotate a collection:
+
+```sh
+imeta add -C mymessage 'training' 'irods' 'online'
+```
+
+#### List Metadata
+
+To list metadata we do:
+
+```sh
+imeta ls -d example.txt
+```
+
+and for a collection:
+
+```sh
+imeta ls -C mymessage
+```
+
+With `imeta ls`, we can retrieve the AVUs when given a file or collection name. In the next part we will see how we can retrieve the file and folder names when given an attribute or value.
+
+#### Queries for data
+Previously we calculated a checksum. The checksum was stored in the iCAT metadata catalogue but we cannot fish it out with imeta. To query the iCAT metadata catalogue we need another command, the iquest command.
+
+Whereas we can use `imeta qu` for a simple queries, we should use `iquest` command for sql-like sophisticated search. Previously calculated a checksum can be searched by `iquest` since the checksum was stored in the iCAT metadata catalogue.
+
+For a simple query:
+
+```sh
+imeta qu -d distance = 10
+```
+
+For an extended queries:
+
+Let’s fetch the data file, given e.g. the attribute 'author'.
+
+```sh
+iquest "select COLL_NAME, DATA_NAME, META_DATA_ATTR_VALUE where \
+META_DATA_ATTR_NAME like 'author'"
+```
+
+We can filter for a specific attribute values:
+
+```sh
+iquest "select COLL_NAME, DATA_NAME where \
+META_DATA_ATTR_NAME like 'author' and META_DATA_ATTR_VALUE like 'Tom'"
+```
+
+Or we can retrieve all data with a certain checksum:
+
+```sh
+iquest "select COLL_NAME, DATA_NAME, DATA_CHECKSUM where \
+DATA_CHECKSUM like 'sha2:I+hXKW8cY3IZ1KZUJlFE8yPRltdSstwnONohiUr3UTo='"
+```
+
+To bring all files with substring 'test' in file name:
+
+```sh
+iquest "select COLL_NAME, DATA_NAME, DATA_CHECKSUM where DATA_NAME like '%test%'"
+```
+
+**Note**: the '%' and '_' are wildcards.
+
+To see predefined attributes that we can use in our searches:
+
+```sh
+iquest attrs
+```
+
+**Exercise 7:**
+
+- Create the author Jan for the file example.txt
+- Inspect the list of AVUs
+- Add a new triple 'weight' '40' 'kg'
+- Add a new triple 'type' 'file' 'unix'
+- Explore the options of imeta (imeta -h)
+- Overwrite the author in (author, Jan) with a different name. Do not create a new triple and delete the old one. Find a way to update the existing triple.
+- Remove the author Tom
+- What does imeta addw do?
 
