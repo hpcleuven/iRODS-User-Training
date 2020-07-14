@@ -267,6 +267,71 @@ Only the recently added file will inherit the ACLs from the folder. Old data wil
 ils -A -r mymessage
 ```
 
+#### Checking data integrity
+For confirming data integrity, the checksum of a data object or a collection can be checked both in our VSC systems (Tier-1 nodes) and iRODS.
+
+We can confirm the checksum of one or more data-object or collection from iRODS. Let’s first check the checksum of mymessage collection in iRODS.
+
+```sh
+ichksum –r mymessage
+
+C- /kuleuven_tier1_pilot/home/public/mymessage:
+    example1.txt    sha2:cQWOwjd7n0JM25XzWdaZPh9RQUvpQWa81Slilj/R0YA=
+    message.txt    sha2:I+hXKW8cY3IZ1KZUJlFE8yPRltdSstwnONohiUr3UTo=
+```
+
+As you remember we can check same by `ils -L` command. But this command list all other information.
+
+We can reproduce the same digits with `sha256sum ${FILENAME} | awk '{print $1}' | xxd -r -p | base64`.
+
+Now we check the checksum of the message.txt file in our local system.
+
+```sh
+sha256sum message.txt | awk '{print $1}' | xxd -r -p | base64
+
+I+hXKW8cY3IZ1KZUJlFE8yPRltdSstwnONohiUr3UTo=
+```
+
+So we can confirm that this data object/file is the same and we don’t detect any error during its transmission or storage.
+
+**Exercise 5:**
+
+Confirm the data integrity of example1.txt data object.
+
+#### Data Synchronization
+To synchronize the data between a local copy (local file system) and the copy stored in iRODS or between two iRODS copies, we can use ` irsync`. The command and its mode can be determined by the way the sourceFile|sourceDirectory and targetFile|targetDirectory are specified.
+
+Files and directories prepended with 'i:' are iRODS files and collections. Local files and directories are specified without any prefix.
+
+For example, the command:
+
+```sh
+irsync -r foo1 i:foo2
+```
+
+synchronizes recursively the data from the local directory foo1 to the iRODS collection foo2 and the command:
+
+```sh
+ irsync -r i:foo1 foo2
+ ```
+
+synchronizes recursively the data from the iRODS collection foo1 to the local directory foo2.
+
+```sh
+ irsync -r i:foo1 i:foo2
+ ```
+
+synchronizes recursively the data from the iRODS collection foo1 to another iRODS collection foo2.
+
+How does this command work? The command compares the checksum values and file sizes of the source and target files to determine whether synchronization is needed. 
+
+**Exercise 5:**
+
+- Download mymessage collection to your VSC system (`iget -r mymessage`).
+- Add test1.txt file inside this directory.
+- Synchronize this change with your iRODS destination.
+- See the update in iRODS collection.
+
 ### Metadata
 
 
