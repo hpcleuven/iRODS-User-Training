@@ -63,5 +63,5 @@ Investigate the metadata of your collection and data object. We can easily come 
 - Delete permanently the renamed file(deleted)
 - Move deleted collection metalnx_test to public collection
 
-As you have seen we can do lots data management operations easily with Metalnx portal.
+As you have seen we can do lots of data management operations easily with Metalnx portal.
 
