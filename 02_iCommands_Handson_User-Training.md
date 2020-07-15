@@ -21,14 +21,20 @@ The aim of the training is to explain the following topics by using the command 
 - ACLs to data objects/collections
 
 ### Login in to VSC
-In this course we will use the Tier-1 login node as our user interface. Therefore you are supposed to reach to Tier-1 login node.
-In the future we will also be able to use Tier-2 login and compute nodes.
+In this course we will use the Tier-1 login node as our user interface. But you can also use Tier-2 login. Therefore you are supposed to reach to either Tier-1 or Tier-2 login node.
+In the future we will also be able to use compute nodes.
 
 ### Connecting to iRODS
 After you have reached the Tier-1 to work on, to be able to interact with iRODS, as a VSC user you will need to activate the service by executing the following commands:
 
 ```sh
 ssh irods.hpc.kuleuven.be | bash
+```
+
+If you are connecting from Tier-2 login node, you should then execute:
+
+```sh
+ssh irods.tier1.leuven.vsc | bash
 ```
 
 ### Informative iCommands
