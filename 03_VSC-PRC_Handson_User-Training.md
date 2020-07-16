@@ -238,7 +238,83 @@ session.bulk.remove(irods_path, recurse=True, force=True, verbose=True)
 ```
 
 
+##  Exercises 
 
+### Exercise 1 
+
+VSC-PRC also comes with a set of scripts which make it easy to use the
+Python module from a Unix shell:
+
+- vsc-prc-find
+- vsc-prc-iget
+- vsc-prc-iput
+- vsc-prc-imkdir
+- vsc-prc-irm
+- vsc-prc-imeta
+- vsc-prc-add-job-metadata
+
+Typing e.g. :code:`vsc-prc-find --help` will show a description of the
+recognized arguments. The command-line equivalents of the three Python
+snippets above, for example, would look like this:
+
+```sh 
+vsc-prc-iget '~/my_irods_collection/*.txt' -d .
+vsc-prc-find '~' -n '*.txt' --object_avu='Author;Me'
+vsc-prc-find '~' -n '*.txt' --object_avu='Author;Me' | xargs -i vsc-prc-iget {} -d .
+```
+
+Try to reproduce the what we have done on the previous section from ipython but this time using the vsc-prc
+command line tools
+
+### Exercice 2 
+
+Let's put everthing together. Write a python program that does the following:
+
+- Create a directory in iRODS named `training`
+- Upload the directory `molecules` as subcollection of the training directory
+- Add the following metadata to the `training` collections and its subcollections:
+  - Project: Training
+  - PI: Homer Simpson
+
+- Add the following metadata to the the c\*.xyz files:
+  - SoftwareName: OpenBabel
+  - SoftwareVersion: 3.1.1
+  - SoftwareLicense: GNU General Public License, version 2
+
+- Modify the permissions of the training collection to be readable by all the lt1_es2020 group. 
+Hint: You will need to use the following  PRC functions:
+
+  - Get the collection information: 
+
+  ```py
+  coll = session.collections.get('/aliceZone/home/irods-user1')
+  ```
+
+  This command will store in the coll varianble all the information related to the collection. 
+  The information that can be obtained:
+
+  - coll.id 
+  - coll.path
+  - coll.data_objects
+  - coll.subcollections
+
+
+  - Set up the new permissions by doing:
+
+  ```py
+  from irods.access import iRODSAccess
+  acl = iRODSAccess('read', coll.path, 'lt1_es2020', session.zone)
+  session.permissions.set(acl)
+  ```
+
+  where:
+
+  - 'read' is the kind of permission we want to give (other option are own, write, null)
+  - coll.path is tha path of the collection we want to modify obtained the previous session.collection.get()
+  - 'lt1_es2020' is the name of the group to whom we want to give read access
+  - session.zone is the iRODS zone to which this collection belongs and will be taken from the session information (in our case is: kuleuven_tier1_pilot
+
+- Finally create a new local directory named `molecules.copy` and download all the files that where created with the OPenBabel software.
 
 
 
