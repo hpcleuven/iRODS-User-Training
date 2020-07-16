@@ -5,3 +5,51 @@ Execution type of rules based on the accepted policies may change. Most of the r
 
 Therefore we can categorize the rules as system level rules and user-defined rules. User-defined rules can be written into a local file in our VSC system and we control the execution of these rules.
 
+Rules that have been written into a file can be executed through the `irule` command:
+
+```sh
+irule vF Rulename.r
+```
+
+**Exercise1**
+
+Create firstrule.r file with the following command and execute it.
+
+```sh
+MyFirstRule {
+    writeLine("stdout", "Hello world!");
+ }
+
+OUTPUT ruleExecOut
+```
+
+**Exercise2**
+
+Create hello.r file with the following command and execute it.
+
+```sh
+HelloWorld{
+        writeLine("stdout", "Hello *name!");
+}
+
+INPUT *name="iRODS project group"
+OUTPUT ruleExecOut, *name
+```
+
+**Exercise3**
+
+Create list.r file with the following command and execute it.
+
+```sh
+recursiveList{
+    foreach(*i in SELECT COLL_NAME, DATA_NAME WHERE COLL_NAME like '%test%'){
+        *coll = *i.COLL_NAME;
+        *data = *i.DATA_NAME;
+        writeLine("stdout", "*coll/*data");
+    }
+    writeLine("stdout", "listing done");
+}
+
+input null
+output ruleExecOut
+```

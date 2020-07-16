@@ -33,20 +33,30 @@ Use the “Submit” button to deposit the subfolder. This will copy the content
 
 **Note**: If a collection is created in iRODS, we can see it with its content in Yoda but we cannot edit anything. A collection created first in Yoda can be seen/edited both in Yoda and iRODS.
 
+To allow different communities to share the same Yoda implementation the concept of categories and subcategories were introduced. Every group has a category and subcategory. Within the group-manager groups are grouped into a tree of categories and subcategories. See [category/permission](https://github.com/UtrechtUniversity/yoda/blob/development/docs/design/group-manager.md)
+
 We can do now some hands-on exercises:
 
 **Exercise1**:
 
+- Create the project group
+- Give required permission
 
 **Exercise2**:
 
+- Data upload and download through the mapping yoda.
+- Upload a data file via the portal.
 
 **Exercise3**:
 
+- Fill in default metadata form and submit it.
 
 **Exercise4**:
 
+- Use the search field options to understand the search.
 
 **Exercise5**:
 
+- Lock one of the collection.
+- Submit it for vault.
 
