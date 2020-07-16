@@ -24,6 +24,6 @@ vsc-prc-put "molecules" --destination="~/training"
 
 
 In the directory jobsscripts you can find a template file (exercise1.pbs) 
-that you can use as reference to fill up
+that you can use as reference to create your script
 
 
