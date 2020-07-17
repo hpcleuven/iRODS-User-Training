@@ -287,7 +287,7 @@ Hint: You will need to use the following  PRC functions:
   - Get the collection information: 
 
   ```py
-  coll = session.collections.get('/aliceZone/home/irods-user1')
+  coll = session.collections.get('/kuleuven_tier1_pilot/home/vsc30706/training')
   ```
 
   This command will store in the coll varianble all the information related to the collection. 
