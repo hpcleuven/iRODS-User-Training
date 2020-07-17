@@ -47,8 +47,7 @@ vsc-prc-iput ....
 
 # Add job metadata to the output file
 
-vsc-prc-add-job-metadata "$OUTdiriRODS/\${gcm}/postproc/*.nc"
-
+vsc-prc-add-job-metadata ....
 # Add additional user metadata to the output file
 
 vsc-prc-imeta .... 
