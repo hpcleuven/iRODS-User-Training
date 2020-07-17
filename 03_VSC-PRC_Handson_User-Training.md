@@ -34,7 +34,7 @@ module load Python/3.7.4-GCCcore-8.3.0
 module load vsc-python-irodsclient/development
 ``` 
 
-Note that the vsc-python-irodsclient/developmentit will load a python module if there is none already loaded.
+Note that the vsc-python-irodsclient/development will load a python module if there is none already loaded.
 In order to have full control oif which Python version is used it is recommended to prior to load the vsc-prc module to load the Python version you want to work with.
 
 In addition before using the Python client it is needed to start an iRODS session by executing the command:
