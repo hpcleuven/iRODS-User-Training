@@ -31,7 +31,7 @@ Before using it you will need to load the corresponding module:
 
 ```sh
 module load Python/3.7.4-GCCcore-8.3.0
-module load vsc-python-irodsclient/developmentit
+module load vsc-python-irodsclient/development
 ``` 
 
 Note that the vsc-python-irodsclient/developmentit will load a python module if there is none already loaded.
