@@ -1,5 +1,5 @@
 # Introduction to Python iRODS Client (PRC) and VSC-PRC tools
-This training introduces you to the basics of using the iRODS client API implemented in Python as well as the additional functions and tools developed by VSC to extend the iRODS Python API functionalities. The main feature of the VSC extensions is the possibility of using wildcards ("\*") and tildes ("~")for specifying iRODS data objects and collections. 
+This training introduces you to the basics of using the iRODS client API implemented in Python as well as the additional functions and tools developed by VSC to extend the iRODS Python API functionalities. The main feature of the VSC extensions is the possibility of using wildcards ("\*") and tildes ("~") for specifying iRODS data objects and collections. 
 
 ## Goal of this training
 You will learn how to use the Python iRODS API (PRC) to interact with the Tier-1 Data service iRODS infrastructure.
@@ -35,7 +35,8 @@ module load vsc-python-irodsclient/development
 ``` 
 
 Note that the vsc-python-irodsclient/development will load a python module if there is none already loaded.
-In order to have full control oif which Python version is used it is recommended to prior to load the vsc-prc module to load the Python version you want to work with.
+In order to have full control about which Python version is used it is recommended to prior to load the vsc-prc-python module 
+to load the Python version you want to work with.
 
 In addition before using the Python client it is needed to start an iRODS session by executing the command:
 
@@ -51,7 +52,8 @@ From Tier-2 login nodes:
 ssh irods.tier1.leuven.vsc | bash
 ``` 
 
-These command will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate your access by re-executing one of these commands again.
+These command will activate a temporary token for a period of 7 days. After the 7 days have passed you will need to reactivate 
+your access by re-executing one of these commands again.
 
 ###  Working with collections and data objects
 
@@ -76,7 +78,7 @@ ipython
 ``` 
 
 The first thing we need to do is to import the VSCIRODSSession module and create an iRODS session.
-This class is derived from PRC's irods.iRODSSession class, and as such you can still use it to do what PRC is capable off (see https://github.com/irods/python-irodsclient). Here, we will focus on the functionality that is added by VSC-PRC
+This class is derived from PRC's irods.iRODSSession class, and as such you can still use it to do what PRC is capable off (see https://github.com/irods/python-irodsclient). Here, we will focus on the functionalities that are added by VSC-PRC
 
 ```py
 from vsc_irods.session import VSCiRODSSession
@@ -84,7 +86,8 @@ session = VSCiRODSSession(txt='-')
 ```
 In addition to the keyword arguments for irods.iRODSSession, it also accepts a txt argument. This specifies where the session's print output should be directed to, with the default '-' referring to stdout.
 
-Note that when using the VSCiRODSSession class is best practice to initiat it using the with construct to ensure that the session is cleanly terminated, even if an error occurs. 
+Note that when using the VSCiRODSSession class is best practice to initiate it using the with construct to 
+ensure that the session is cleanly terminated, even if an error occurs. 
 
 The VSC-PRC library provides a number of functions grouped by functionality:
 
@@ -153,6 +156,7 @@ This demonstrate that even using the VSCIRODSSession class all the functionaliti
 Let's use the search.find() function to verify that the file has been uploaded to iRODS:
 
 ```py
+irods_path = '/kuleuven_tier1_pilot/home/vsc30706/training/'
 session.search.find(irods_path,types='f')
 ```
 This command returns a list of iRODS data objects paths (types='f' means list files) which match a given pattern. As we have not defined a pattern then the default value ("\*") is used. So, the result will be a list containing the irods paths of all the files in the collection `irods_path`.  
@@ -196,7 +200,6 @@ Until now we have seen how to use the search.find function to search for collect
 based on their paths and filenames. But iRODS offer also the possibility to add metadata to them 
 in the form of tuples or triples Attribute-Value-[Unit] also called AVUs. 
 
-
 Let's start adding metadata to our `training` collection to identify it with the associated research project.
 We will add a tuple Attribute-Value (Project, Training) and we will apply this metadata to the training collection
 and all its subcollections and data objects by using the recursive option. As we have also selected the verbose 
@@ -209,7 +212,7 @@ session.bulk.metadata(irods_path + '/*' , object_avu=avu1, action='add', recurse
 ```
 
 We will now create two other AVUs pairs to add to the xyz files the experiment information.
-The molecules (c6h6.xyz, ch2och2.xyz asession.bulk.metadata(irods_path + '/sih4.xyz' , object_avu=avu3, action='add', recurse=True, verbose=True)nd ch3cooh.xyz) where used in experiment1 while the file sih4.xyz in experiment2.
+The molecules (c6h6.xyz, ch2och2.xyz and ch3cooh.xyz) where used in experiment1 while the file sih4.xyz in experiment2.
 The rest of the molecules has not yet being used in any experiment. 
 
 ```py
