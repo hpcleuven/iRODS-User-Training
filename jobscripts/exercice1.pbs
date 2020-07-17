@@ -3,8 +3,19 @@
 #PBS -l nodes=1:ppn=28:broadwell
 #PBS -l walltime=00:30:00
 
-module purge
+# Start a iRODS session 
+# It is recommended to always start a new iRODS session inside
+# your batch scripts to be sure there is active an session 
+# at the moment tne iRODS commands will be executed.
+# As the tolken last 7 days this should give enough time to complete
+# most of the jobs
+
+ssh irods.hpc.kuleuven.be | bash
+
+
+
 # Add module for VSC irods tools
+module purge
 module load Python/3.7.4-GCCcore-8.3.0
 module load vsc-python-irodsclient
 
