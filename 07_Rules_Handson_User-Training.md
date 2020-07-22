@@ -8,7 +8,7 @@ Therefore we can categorize the rules as system level rules and user-defined rul
 Rules that have been written into a file can be executed through the `irule` command:
 
 ```sh
-irule vF Rulename.r
+irule -F Rulename.r
 ```
 
 **Exercise1**
