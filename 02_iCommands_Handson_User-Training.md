@@ -338,6 +338,36 @@ How does this command work? The command compares the checksum values and file si
 - Synchronize this change with your iRODS destination.
 - See the update in iRODS collection.
 
+#### File Bundling
+To upload and download structured files such as tar files to/from iRODS, we can use `ibun` command.
+
+A tar file containing many small files can be created with normal unix tar command on our local machine . We can then upload the tar file to the iRODS server as a normal iRODS file. Furthermore, `ibun –x` command can be used to extract/untar the uploaded tar file. The extracted subfiles and subdirectories will then be appeared as normal iRODS files and sub-collections.
+
+As a good practice we can tag the tar file using the -Dtar flag when uploading the file with iput. The dataType tag can be added later with the isysmeta command. For example:
+isysmeta mod /kuleuven_tier1_pilot/home/vsc33586/mydir.tar datatype 'tar file'
+
+```sh
+  tar -chlf test.tar –C myCollection my file
+  iput -Dtar test.tar
+  ibun -x test.tar test_collection
+```
+
+We can also add/bundle an iRODS collection into a tar file by using `ibun -c` command.
+
+```sh
+  ibun -cDtar test.tar myCollection1
+```
+
+**Exercise 7:**
+
+- Create a “test.tar” file composed of folder and files in your VSC. Or get a compressed file with corresponding extensions.
+- Upload this file to iRODS with using tag (-Dtar flag) as a good practice.
+- Extract this tar file in “test” collection that you don’t have before.
+- Bundle an iRODS collection into a tar file.
+- Upload another tar file to iRODS without using tag.
+- Check its data type and if it doesn’t have a proper one, modify it with ‘tar file’.
+
+
 ### Metadata
 Metadata is often called data about data and is used to facilitate data discovery to improve search and retrieval. iRODS provides the user with the possibility to create Attribute Value Unit triples and store them with the data. The triples are stored in the iCAT catalogue.
 
