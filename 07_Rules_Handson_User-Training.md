@@ -37,7 +37,7 @@ output *output*
 ```
 Note that not all of these parts are mantadory; For example, if our rule uses no input, we can set input to NULL or just not mention it. Likewise, if there is no specific condition to be met, we can remove the 'on()' and the extra pair of curly brackets.
 
-As a simple example, the mantadory hello world script would look like this:
+A rule that simply prints 'Hello World!' to the terminal would look like this:
 
 ```
 helloworld{
