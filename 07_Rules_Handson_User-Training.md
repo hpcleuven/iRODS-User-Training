@@ -112,7 +112,7 @@ output ruleExecOut
 
 You can also ask the user for input by setting the value of the variable to $.
 When running the rule, the user will be prompted to give a value.
-After the dollar sign, you can also specify a default value, but this is not mantadory.
+After the dollar sign, you can also specify a default value, but this is not mandatory.
 
 ```
 promptRule{
