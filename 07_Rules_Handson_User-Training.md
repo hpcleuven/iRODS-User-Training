@@ -1,18 +1,19 @@
 # iRules for VSC Users
 
 ## What are rules?
-In iRODS rules are used to let organizations automate their data management tasks. At the community level policies are determined and rules are used to automate these determined policies. iRODS has its own rule language which is a domain specific language to define policies and actions in the system. However there is the iRODS rule engine plugin interface that allows iRODS administrators and users to write iRODS policy rules in other languages, e.g. Python. Rules are an important part of iRODS: automating data management policies reduces not only the workload but also human errors, making our data management more consistent.
+With rules, organizations can automate their data management tasks in iRODS. At the community level policies are determined and rules are used to automate these determined policies. iRODS has its own rule language which is a domain specific language to define policies and actions in the system. However, there is the iRODS rule engine plugin interface that allows iRODS administrators and users to write iRODS policy rules in other languages, e.g. Python. Rules are an important part of iRODS: automating data management policies reduces not only the workload but also human errors, making our data management more consistent.
 
-Execution type of rules based on the accepted policies may change. Most of the rules with complex data issues are triggered Policy Enforcement Points (PEP) in terms of automation. We call this type of rules system level rules, and they are managed by the admins.
+There are two types of rules. System level rules handle complex data issues. They are determined by administrators and triggered by Policy Enforcement Points (PEP). 
 
-On the other side, we have user-defined rules. Users can trigger their rules they wrote themselves with the `irule`command. These can be written into a local file in our VSC system. You can think of these the same way as scripts in other languages, which are used to automate tasks. In this tutorial, we will dive deeper into these user-defined rules.
+On the other side, we have user-defined rules. Users can trigger their rules they wrote themselves with the `irule`command. These can be written into a local file in our VSC system. You can think of these the same way as scripts in other languages like python or bash. In this tutorial, we will dive deeper into user-defined rules.
 
 By the end you will be able to:
-* Write your own user defined rules
-* Execute your own rules through the `irule` command
+* Execute rules through the `irule` command    
+* Write your own user-defined rules
 
-## The basics 
-Calling the irule command on example file, Rulename.r, goes as follows:
+
+## Executing rules with iRule
+Calling the irule command on example file, rulename.r, goes as follows:
 
 ```sh
 irule -F Rulename.r
@@ -20,6 +21,7 @@ irule -F Rulename.r
 The option -F means that we supply the rule in a file. There are other ways to call rules, but this is the way we will use.
 
 
+## Writing rules: the basics
 Inside the file, you will find one or multiple rules. These rules have a syntax like this:
 
 ```
@@ -49,14 +51,27 @@ output ruleExecOut
 
 As you can see, the command `writeLine('stdout', 'your message');` is the common way to print things.
 
+In a file, only the first rule gets triggered by iRule, even . However, you can call these other rules in your first rule, as illustrated by this example:
 
+```
+firstRule{
+    writeLine('stdout', 'This is my first rule');
+    secondRule()
+}
+
+secondRule{
+    writeLine('stdout', 'This is my second rule');
+}
+
+output ruleExecOut
+```
 
 **Exercise 1**
 
 * Write a rule that prints "Hello" and your name
 * Write a rule that prints the sum of 5 and 3
 
-If you don't know how to do certain things, you can always look them up in the [documentation of the iRODS rule language](https://docs.irods.org/4.2.8/plugins/irods_rule_language/).
+If you don't know how to do certain things, like adding numbers, you can always look them up in the [documentation of the iRODS rule language](https://docs.irods.org/4.2.8/plugins/irods_rule_language/).
 
 <details>
   <summary>Solution</summary>
