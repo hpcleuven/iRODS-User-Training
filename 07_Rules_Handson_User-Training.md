@@ -37,7 +37,7 @@ Inside the file, you will find one or multiple rules. These rules have a syntax 
 input *input*
 output *output*
 ```
-Note that not all of these parts are mantadory. For example, if our rule uses no input, we can set input to NULL or just not mention it. Likewise, if there is no specific condition to be met, we can remove the 'on()' and the extra pair of curly brackets.
+Note that not all of these parts are mandatory. For example, if our rule uses no input, we can set input to NULL or just not mention it. Likewise, if there is no specific condition to be met, we can remove the 'on()' and the extra pair of curly brackets.
 
 A rule that simply prints 'Hello World!' to the terminal would look like this:
 
