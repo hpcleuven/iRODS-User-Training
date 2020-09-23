@@ -11,7 +11,7 @@ By the end you will be able to:
 * Write your own user defined rules
 * Execute your own rules through the `irule` command
 
-## Working with *irule*
+## The basics of *irule*
 Calling the irule command on example file, Rulename.r, goes as follows:
 
 ```sh
@@ -47,14 +47,99 @@ helloworld{
 output ruleExecOut
 ```
 
+As you can see, the command `writeLine('stdout', 'your message');` is the common way to print things.
+
+
+
+**Exercise 1**
+
+* Write a rule that prints "Hello" and your name
+* Write a rule that prints the sum of 5 and 3
+
+If you don't know how to do certain things, you can always look them up in the [documentation of the iRODS rule language](https://docs.irods.org/4.2.8/plugins/irods_rule_language/).
 
 <details>
-  <summary>Solutions</summary>
+  <summary>Solution</summary>
 
-  Solutions to exercises will come here
-
+  ```
+  nameRule{
+    writeLine('stdout', 'Hello Jan');
+  }
+  output ruleExecOut
+  ```
+  
+  ```
+  sumRule{
+    writeLine('stdout', 3+5);
+  }
+  output ruleExecOut
+  ```
 </details>
 
+
+## Input and variables
+
+Variables in iRODS always start with an **\***.
+They can either be specified as input or in the body of the rule
+
+```
+rule{
+    
+    #you can define a variable here
+    *var1="Hello";
+    writeLine('stdout', *var1 ++ var2);
+}
+
+#you can also define a variable here
+input *var2="World"
+output ruleExecOut
+```
+
+You can also ask the user for input by setting the value of the variable to $.
+When running the rule, the user will be prompted to give a value.
+After the dollar sign, you can also specify a default value, but this is not mantadory.
+
+```
+rule{
+    writeLine('stdout', "I Like" ++ myFavoriteFruit);
+}
+
+input myFavoriteFruit=$"apples"
+output ruleExecOut 
+```
+
+**Exercise 2**
+
+* Write a rule that ask users their name and prints "Hello \[name\]"
+
+<details>
+  <summary>Solution</summary>
+        
+  ```
+  helloNameRule{
+    writeLine('stdout', 'Hello ' ++ *name);
+  }
+  
+  input *name=$
+  output ruleExecOut
+  
+  
+  ```
+  
+</details>
+
+
+
+## Queries
+
+<!--- Of course, we can do more with rules than do calculations and print lines. We can also get information about our data, collections,... in iRods.-->
+
+## Using microservices
+<!---We have shown you how to query iRods for information, but how do we actually interact with iRODS? This is done by using microservices, which are small, preprogrammed functions. For example, there are microservices that create a collection, remove a data object or add metadata. By chaining these tiny tasks together, you can automate your workflow. -->
+
+<!---
+
+These are previous parts of the tutorial
 
 **Exercise1**
 
@@ -98,3 +183,5 @@ recursiveList{
 input null
 output ruleExecOut
 ```
+
+-->
