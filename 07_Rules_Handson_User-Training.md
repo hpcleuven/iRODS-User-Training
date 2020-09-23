@@ -122,56 +122,18 @@ output ruleExecOut
   
   input *name=$
   output ruleExecOut
-  
-  
   ```
-  
 </details>
 
 
 
 ## Queries
 
-<!--- Of course, we can do more with rules than do calculations and print lines. We can also get information about our data, collections,... in iRods.-->
+Of course, we can do more with rules than do calculations and print lines. We can also get information about our data, collections,... in iRods.
+One way to do this is by searching collections or data objects with SQL queries:
 
-## Using microservices
-<!---We have shown you how to query iRods for information, but how do we actually interact with iRODS? This is done by using microservices, which are small, preprogrammed functions. For example, there are microservices that create a collection, remove a data object or add metadata. By chaining these tiny tasks together, you can automate your workflow. -->
-
-<!---
-
-These are previous parts of the tutorial
-
-**Exercise1**
-
-Create firstrule.r file with the following command and execute it.
-
-```sh
-MyFirstRule {
-    writeLine("stdout", "Hello world!");
- }
-
-OUTPUT ruleExecOut
 ```
-
-**Exercise2**
-
-Create hello.r file with the following command and execute it.
-
-```sh
-HelloWorld{
-        writeLine("stdout", "Hello *name!");
-}
-
-INPUT *name="iRODS project group"
-OUTPUT ruleExecOut, *name
-```
-
-**Exercise3**
-
-Create list.r file with the following command and execute it.
-
-```sh
-recursiveList{
+queryRule{
     foreach(*i in SELECT COLL_NAME, DATA_NAME WHERE COLL_NAME like '%test%'){
         *coll = *i.COLL_NAME;
         *data = *i.DATA_NAME;
@@ -180,8 +142,47 @@ recursiveList{
     writeLine("stdout", "listing done");
 }
 
-input null
 output ruleExecOut
 ```
 
--->
+**Exercise3**
+
+1.  In your linux environment, make the files cat.txt and dog.txt
+2.  In iRODS, create a folder called 'animals' and change your working directory to this folder
+3.  Upload cat.txt and dog.txt to the 'animals' folder
+4.  Write a rule that lists all files in that folder
+
+<details>
+    <summary>Solution</summary>
+   
+   ```
+    touch cat.txt
+    touch dog.txt
+    imkdir animals
+    icd animals
+    iput cat.txt
+    iput dog.txt
+    
+   ``` 
+    
+   ```
+   queryRule{
+       foreach(*i in SELECT COLL_NAME, DATA_NAME WHERE COLL_NAME like '%animals%'){
+           *coll = *i.COLL_NAME;
+           *data = *i.DATA_NAME;
+           writeLine("stdout", "*coll/*data");
+       }
+   }
+    
+   output ruleExecOut
+   ```  
+</details>
+
+
+## Using microservices
+We have shown you how to query iRods for information, but how do we actually interact with iRODS? 
+This is done by using microservices, which are small, preprogrammed functions. For example, there are microservices that create a collection, remove a data object or add metadata. 
+By chaining these tiny tasks together, you can automate your workflow.
+
+You can find an overview of all available microservices in the [iRODS documentation](https://docs.irods.org/4.2.8/) under the tab ['Doxygen'](https://docs.irods.org/4.2.8/doxygen/).
+
