@@ -11,7 +11,7 @@ By the end you will be able to:
 * Write your own user defined rules
 * Execute your own rules through the `irule` command
 
-## The basics of *irule*
+## The basics 
 Calling the irule command on example file, Rulename.r, goes as follows:
 
 ```sh
@@ -83,7 +83,7 @@ Variables in iRODS always start with an **\***.
 They can either be specified as input or in the body of the rule
 
 ```
-rule{
+variableRule{
     
     #you can define a variable here
     *var1="Hello";
@@ -100,7 +100,7 @@ When running the rule, the user will be prompted to give a value.
 After the dollar sign, you can also specify a default value, but this is not mantadory.
 
 ```
-rule{
+promptRule{
     writeLine('stdout', "I Like" ++ myFavoriteFruit);
 }
 
@@ -129,7 +129,7 @@ output ruleExecOut
 
 ## Queries
 
-Of course, we can do more with rules than do calculations and print lines. We can also get information about our data, collections,... in iRods.
+Of course, we can do more with rules than do calculations and print lines. We can also get information about our data, collections,... in iRODS.
 One way to do this is by searching collections or data objects with SQL queries:
 
 ```
@@ -154,16 +154,6 @@ output ruleExecOut
 
 <details>
     <summary>Solution</summary>
-   
-   ```
-    touch cat.txt
-    touch dog.txt
-    imkdir animals
-    icd animals
-    iput cat.txt
-    iput dog.txt
-    
-   ``` 
     
    ```
    queryRule{
@@ -180,9 +170,73 @@ output ruleExecOut
 
 
 ## Using microservices
-We have shown you how to query iRods for information, but how do we actually interact with iRODS? 
+We have shown you how to query iRODS for information, but how do we actually interact with iRODS? 
 This is done by using microservices, which are small, preprogrammed functions. For example, there are microservices that create a collection, remove a data object or add metadata. 
 By chaining these tiny tasks together, you can automate your workflow.
 
-You can find an overview of all available microservices in the [iRODS documentation](https://docs.irods.org/4.2.8/) under the tab ['Doxygen'](https://docs.irods.org/4.2.8/doxygen/).
+You can find an overview of all available microservices in the [iRODS documentation](https://docs.irods.org/4.2.8/) under the tab ['Doxygen'](https://docs.irods.org/4.2.8/doxygen/). These pages also contain the parameters needed to use a certain microservice.
 
+Here is a simple example of a rule that uses a microservice to create a collection called 'myCollection' in your home folder.
+To run it, replace the placeholder with your VSC account (e.g. vsc00001).
+
+
+```
+createCollRule {
+        *path="/kuleuven_tier1_pilot/home/[your VSC account]/myCollection";
+        writeLine("stdout", "Creating a collection");
+        msiCollCreate(*path, 0, *Status);
+        writeLine("stdout", "Collection created");
+}
+output ruleExecOut
+
+```
+
+**Exercise 4**
+1. Adding metadata to an object
+    * Create a file called sun.txt and upload it to iRODS
+    * Look up the microservices msiAddKeyVal() and msiAssociateKeyValuePairsToObj()
+    * Write a rule with those two microservices to give the file the attribute-value pair 'temperature': 'hot'
+2. Write a rule that prompts the user to give a name, and create a collection with that name
+
+
+
+<details>
+    <summary>Solution</summary>
+   
+   ```
+   addMetadataRule {
+   
+        #making a variable with the path of sun.txt in string format
+        *dataObj="/kuleuven_tier1_pilot/home/[your VSC account]/sun.txt"
+   
+        #creating the key-value pair
+        msiAddKeyVal(*Keyval,'temperature','hot');
+        
+        #assigning the pair to the data object
+        msiAssociateKeyValuePairsToObj(*Keyval,*dataObj,"-d");
+        WriteLine('stdout', 'Metadata assigned');
+   }
+   
+   output ruleExecOut
+        
+   ```  
+   
+   You can check whether this worked with the command `imeta ls -d sun.txt`.
+   
+   ```
+   createCollRule {
+
+        *path="/kuleuven_tier1_pilot/home/vsc33731/" ++ *collectionName
+
+        writeLine("stdout", "Creating a collection");
+        msiCollCreate(*path, 0, *Status);
+        writeLine("stdout", "Collection created");
+
+    }
+
+    input *collectionName=$"myCollection"
+    output ruleExecOut
+    
+   ``` 
+    
+</details>
