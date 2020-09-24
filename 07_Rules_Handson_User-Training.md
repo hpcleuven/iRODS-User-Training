@@ -116,10 +116,10 @@ After the dollar sign, you can also specify a default value, but this is not man
 
 ```
 promptRule{
-    writeLine('stdout', "I Like" ++ myFavoriteFruit);
+    writeLine('stdout', "I Like " ++ *myFavoriteFruit);
 }
 
-input myFavoriteFruit=$"apples"
+input *myFavoriteFruit=$"apples"
 output ruleExecOut 
 ```
 
