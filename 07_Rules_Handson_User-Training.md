@@ -42,7 +42,7 @@ Note that not all of these parts are mandatory. For example, if our rule uses no
 A rule that simply prints 'Hello World!' to the terminal would look like this:
 
 ```
-helloworld{
+helloWorldRule{
     writeLine('stdout', 'Hello World!');
 }
 
@@ -102,7 +102,7 @@ variableRule{
     
     #you can define a variable here
     *var1="Hello";
-    writeLine('stdout', *var1 ++ var2);
+    writeLine('stdout', *var1 ++ *var2);
 }
 
 #you can also define a variable here
