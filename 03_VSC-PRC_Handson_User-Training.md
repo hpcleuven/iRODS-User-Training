@@ -1,4 +1,9 @@
 # Introduction to Python iRODS Client (PRC) and VSC-PRC tools
+
+*Prerequisites:*  
+*-A VSC account (or your own iRODS environment)*  
+*-Basic knowledge of Python is useful*  
+
 This training introduces you to the basics of using the iRODS client API implemented in Python as well as the additional functions and tools developed by VSC to extend the iRODS Python API functionalities. The main feature of the VSC extensions is the possibility of using wildcards ("\*") and tildes ("~") for specifying iRODS data objects and collections. 
 
 ## Goal of this training
