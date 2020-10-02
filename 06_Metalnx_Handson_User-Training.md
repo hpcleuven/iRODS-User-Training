@@ -1,4 +1,8 @@
 # Metalnx Portal Client for VSC Users
+
+*Prerequisites:*  
+*-A VSC-account*  
+
 Metalnx is a graphical user interface and serves as a client to iRODS. It help simplify most administration, collection management, and metadata management tasks removing the need to memorize the long list of iCommands. It allows users to manage content and metadata associated with content.
 
 Via the following link [Metalnx](https://icts-p-hpc-metalnx.cloud.icts.kuleuven.be/metalnx/login/), we can reach the Matalnx portal. 
