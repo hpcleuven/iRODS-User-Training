@@ -1,4 +1,9 @@
 # iCommands for VSC Users
+
+*Prerequisites:*  
+*-A VSC account (or your own iRODS environment)*  
+*-Basic knowledge of command line (Bash)*  
+
 This training introduces you to the basics of what iCommands are and how we do simple data management as a user with iCommands.
 To this end we will make show of the icommands which is an Unix utilities that give users a command-line interface to iRODS.
 
