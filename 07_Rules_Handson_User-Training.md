@@ -1,5 +1,10 @@
 # iRules for VSC Users
 
+*Prerequisites:*       
+*- A working iRODS evironment*   
+*- Basic knowledge of SQL is useful but not mandatory*  
+
+
 ## What are rules?
 With rules, organizations can automate their data management tasks in iRODS. At the community level policies are determined and rules are used to automate these determined policies. iRODS has its own rule language which is a domain specific language to define policies and actions in the system. However, there is the iRODS rule engine plugin interface that allows iRODS administrators and users to write iRODS policy rules in other languages, e.g. Python. Rules are an important part of iRODS: automating data management policies reduces not only the workload but also human errors, making our data management more consistent.
 
