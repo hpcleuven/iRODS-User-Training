@@ -49,12 +49,13 @@ We can do now some hands-on exercises:
 
 **Exercise2**:
 
-- Try to download one of the files. 
-- Make a file called 'test.txt' on your pc and try to upload it via the portal.
+- Try to download any file.
+- In the tab 'research', in a group you are added to, add a collection named 'test' 
+- Make a file called 'test.txt' on your pc and try to upload it to the collection 'test' via the portal.
 
 **Exercise3**:
 
-- Fill in default metadata form and submit it.
+- Fill in default metadata form for the testcollection and submit it.
 
 **Exercise4**:
 
