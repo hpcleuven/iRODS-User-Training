@@ -1,21 +1,22 @@
 # Introduction to Python iRODS Client (PRC) and VSC-PRC tools
 
 *Prerequisites:*  
-*-A VSC account*  
-*-Basic knowledge of Python is useful*  
+*-A VSC account and acces to the Tier-1 infrastructure of KU Leuven*  
+*-Basic knowledge of command line (Bash)*   
+*-Basic knowledge of Python is useful*    
 
 This training introduces you to the basics of using the iRODS client API implemented in Python as well as the additional functions and tools developed by VSC to extend the iRODS Python API functionalities. The main feature of the VSC extensions is the possibility of using wildcards ("\*") and tildes ("~") for specifying iRODS data objects and collections. 
 
 ## Goal of this training
 You will learn how to use the Python iRODS API (PRC) to interact with the Tier-1 Data service iRODS infrastructure.
-The following funtionalities will be covered:
+The following functionalities will be covered:
 
-- Upload and download data
-- Upload and download data collections
-- Add and edit metadata
-- Set access permissions for data objects and collections
-- Query for data using user defined metadata
-- use the VSC-PRC command line tools
+- Uploading and downloading data
+- Uploading and downloading data collections
+- Adding and editing metadata
+- Setting access permissions for data objects and collections
+- Querying for data using user defined metadata
+- Using the VSC-PRC command line tools
 
 
 ## Using the VSC-PRC interactively 
@@ -271,7 +272,7 @@ vsc-prc-find '~' -n '*.txt' --object_avu='Author;Me'
 vsc-prc-find '~' -n '*.txt' --object_avu='Author;Me' | xargs -i vsc-prc-iget {} -d .
 ```
 
-Try to reproduce the what we have done on the previous section from ipython but this time using the vsc-prc
+Try to reproduce what we have done in the previous section on ipython, but this time using the vsc-prc
 command line tools
 
 ### Exercice 2 
