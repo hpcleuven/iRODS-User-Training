@@ -2,7 +2,7 @@
 
 *Prerequisites:*       
 *-A VSC account (or your own iRODS environment)*     
-*- Basic knowledge of SQL is useful but not mandatory*  
+*-Basic knowledge of SQL is useful*  
 
 
 ## What are rules?
