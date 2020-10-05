@@ -42,7 +42,7 @@ To allow different communities to share the same Yoda implementation the concept
 
 We can do now some hands-on exercises:
 
-**Exercise1**:
+**Exercise1**:  
 *Note: this first exercise can only be completed by users with the role of group manager*  
 - Create the project group.
 - Give required permission.
