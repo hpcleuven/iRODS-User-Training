@@ -1,7 +1,8 @@
 # Yoda Portal Client for VSC Users
 
 *Prerequisites:*  
-*-A VSC-account coupled to an iRODS account*  
+*-A VSC-account coupled to an iRODS account*    
+*-You should be added to some test groups by the HPC staff before starting this tutorial.*
 
 [Yoda](https://yoda.uu.nl/yoda-uu-nl/what-is-yoda/index.html) is a research data management solution developed by Utrecht University. Yoda portal is a web application for performing data management activities, such as managing access to your data and changing metadata. It allows users to deploy and manage their research data.
 
@@ -42,14 +43,14 @@ To allow different communities to share the same Yoda implementation the concept
 We can do now some hands-on exercises:
 
 **Exercise1**:
-
-- Create the project group
-- Give required permission
+*Note: this first exercise can only be completed by users with the role of group manager*  
+- Create the project group.
+- Give required permission.
 
 **Exercise2**:
 
-- Data upload and download through the mapping yoda.
-- Upload a data file via the portal.
+- Try to download one of the files. 
+- Make a file called 'test.txt' on your pc and try to upload it via the portal.
 
 **Exercise3**:
 
@@ -57,10 +58,10 @@ We can do now some hands-on exercises:
 
 **Exercise4**:
 
-- Use the search field options to understand the search.
+- Use the search field options to find your previously uploaded file test.txt. Feel free tot play around and search other things to increase your understanding of the search function.
 
 **Exercise5**:
 
-- Lock one of the collection.
-- Submit it for vault.
+- Lock one of the collections.
+- Submit it to the vault.
 
