@@ -43,25 +43,25 @@ Now let’s do some hands-on exercises:
 - Create one public metadata template with the name of “test_training” and it has to include at least two AVUs.
 - Create one private metadata template with the name of your choose.
 - Add the private one on the metalnx_test collection.
-- Add one of the public metadata template on the metalnx_test collection.
+- Add one of the public metadata templates on the metalnx_test collection.
 
-Investigate the metadata of your collection and data object. We can easily come to a conclusion that managing metadata with different combination (even multiple files may take different metadata than collection) is quite manageable and easy.
+Investigate the metadata of your collection and data object. We can easily come to a conclusion that managing metadata with different combinations (even multiple files may take different metadata than a collection) is quite manageable and easy.
 
 **Exercise3**:
 
 - Make this metalnx_test collection your favorite.
-- Add a new file to this collection using favorite tab.
+- Add a new file to this collection using the favorite tab.
 - Give “own” access permission to your friend and share this file link.
-- Download first file to your local machine.
-- Check your shared tab if you have any file for you. (If not, ask me to share with you one.)
+- Download the first file you created to your local machine.
+- Check your shared tab to see if you have any file for you. (If not, ask me to share one with you.)
 
 **Exercise4**:
 - Change the name of the second uploaded file.
 - Delete this renamed file.
-- Delete metalnx_test collection
-- Go to the trash tab and see your deleted items
-- Delete permanently the renamed file(deleted)
-- Move deleted collection metalnx_test to public collection
+- Delete metalnx_test collection.
+- Go to the trash tab and see your deleted items.
+- Permanently delete the renamed file (deleted).
+- Move deleted collection metalnx_test to public collection.
 
-As you have seen we can do lots of data management operations easily with Metalnx portal.
+As you have seen we can do lots of data management operations easily with the Metalnx portal.
 
