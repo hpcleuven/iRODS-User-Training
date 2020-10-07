@@ -19,53 +19,67 @@ Metalnx portal is mainly composed of two panes. The left pane keeps the relevant
 
 <img align="center" src="img/metalnx_general.png" width="400px">
 
-**Collections**: Under this tab, we can perform all data object and collection related activities. This includes adding new collections, uploading data objects, downloading collection/data objects, editing/deleting and giving user/group access permissions. This tab and its functionalities are mostly used in Metalnx.
+**Collections**: Under this tab, we can perform all data object (= a file) and collection related activities
+ 
+- Uploading files  
+- Moving files/collections  
+- Copying files/collections  
+- Renaming files/collections  
+- Applying metadata templates (see later)  
+- Downloading files  
 
-**Search**: This tab gives search options based on the metadata and properties parameters. (there is an open issue now)
+Behind any collection or file, you can press 'View info' for the following options:
 
-**Templates**: We can here add (create) our own metadata templates or import a template from outside in a json format.
+- Adding metadata to files/collections  
+- Adding files/collections to favorites  
+- Setting permissions  
+- Getting previews of files  
 
-**Shared Links**: It is possible to reach the links shared by other users.
+This tab and its functionalities are mostly used in Metalnx.
 
-**Favorites**: We can easily see our bookmarked collections and files.
+**Search**: This tab gives search options based on the metadata and properties parameters (currently not available).
 
-**Public**: We can reach the public area collections.
+**Templates**: We can here create our own metadata templates or import a template from outside in a json format. These can then be applied to files or collections.
 
-**Favorites**: We can see the files and collections moved to trash bin.
+**Shared Links**: Here you can see the links shared by other users.
+
+**Favorites**: Here you can see your bookmarked collections and files.
+
+**Public**: here you can reach the public area collections.
+
+**Trash**: Here you can see the files and collections moved to trash bin.
 
 Now let’s do some hands-on exercises:
 
-**Exercise1**:
+**Exercise 1: data objects, folders and metadata**:
 
 - Create a metalnx_test collection under your home directory.
-- Give read access to your friend recursively.
-- Upload a data object inside the collection.
-- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name, Unit: Your organization).
+- Upload a file inside the collection.
+- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name).  
+- Rename your file to 'testfile'.
+- Download testfile to your local machine.
 
- **Exercise2**:
+ **Exercise 2: metadata templates**:
 
 - Create one public metadata template with the name of “test_training” and it has to include at least two AVUs.
 - Create one private metadata template with the name of your choose.
 - Add the private one on the metalnx_test collection.
 - Add one of the public metadata template on the metalnx_test collection.
 
-Investigate the metadata of your collection and data object. We can easily come to a conclusion that managing metadata with different combination (even multiple files may take different metadata than collection) is quite manageable and easy.
+Take a look at the metadata of your collection and your uploaded file. As you can see, we can easily manage metadata on both collections and the files in them, even if they have different metadata.
 
-**Exercise3**:
+**Exercise 3: favorites and sharing**:
 
-- Make this metalnx_test collection your favorite.
-- Add a new file to this collection using favorite tab.
-- Give “own” access permission to your friend and share this file link.
-- Download first file to your local machine.
-- Check your shared tab if you have any file for you. (If not, ask me to share with you one.)
+- Add metalnx_test collection to your favorites.
+- Give “own” access permission to a friend and share this file link.
+- Check your shared tab if there are any files shared with you. (If not, ask me to share with you one.)
 
-**Exercise4**:
-- Change the name of the second uploaded file.
-- Delete this renamed file.
-- Delete metalnx_test collection
-- Go to the trash tab and see your deleted items
-- Delete permanently the renamed file(deleted)
-- Move deleted collection metalnx_test to public collection
+**Exercise4: deleting**:
+- Delete your file.
+- Delete metalnx_test collection.
+- Go to the trash tab and look at your deleted items.
+- Permanently delete the deleted file.
+- Move the deleted collection metalnx_test to the public collection.
 
-As you have seen we can do lots of data management operations easily with Metalnx portal.
+As you have seen we can do lots of data management operations easily with the Metalnx portal.
 
