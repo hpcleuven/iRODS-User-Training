@@ -16,10 +16,10 @@ Good luck!
 <details>
   <summary>Hints</summary>
 
-  Try using these skills/microservices to complete the task:
-    -Skill 1
-    -Microservice 1
-    -Microservice2
+  Try using these skills/microservices to complete the task:  
+    -Skill 1  
+    -Microservice 1  
+    -Microservice2  
 
 </details>
 
