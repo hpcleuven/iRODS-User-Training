@@ -5,7 +5,7 @@
 *-Basic knowledge of SQL is useful*  
 
 
-## What are rules?,
+## What are rules?
 As you saw in the previous presentation, organizations can automate their data management tasks in iRODS. At the community level policies are determined and rules are used to automate these determined policies. iRODS has its own rule language which is a domain specific language to define policies and actions in the system. However, there is the iRODS rule engine plugin interface that allows iRODS administrators and users to write iRODS policy rules in other languages, e.g. Python. Rules are an important part of iRODS: automating data management policies reduces not only the workload but also human errors, making our data management more consistent.
 
 There are two types of rules. System level rules handle complex data issues. They are determined by administrators and triggered by Policy Enforcement Points (PEP). 
