@@ -165,6 +165,10 @@ queryRule{
 output ruleExecOut
 ```
 
+This way, you can query the information in the ICAT database.
+As mentioned in the tutorial on iCommands, you can type `iquest attrs` to get an overview of all queryable attributes.
+
+
 **Exercise3**
 
 1.  In your linux environment, make the files cat.txt and dog.txt
