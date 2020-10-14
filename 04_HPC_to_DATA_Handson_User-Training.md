@@ -1,5 +1,12 @@
 # DATA to HPC: integrate iRODS in batch job scripts
 
+*Prerequisites:*  
+*-A VSC account and acces to the Tier-1 infrastructure of KU Leuven*
+*-Permission to submit jobs on the Tier-1 system*
+*-Knowledge on how to use the HPC infrastructure*
+*-Basic knowledge of command line (Bash) and shell scripting*
+
+
 This training explain how to integrate the VSC-PRC command line tools with 
 job batch scripts to be able to stagein/stageout data from/to iRODS to the HPC scratch directory. 
 

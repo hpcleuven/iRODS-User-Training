@@ -1,4 +1,8 @@
 # Metalnx Portal Client for VSC Users
+
+*Prerequisites:*  
+*-A VSC-account coupled to an iRODS account*  
+
 Metalnx is a graphical user interface and serves as a client to iRODS. It help simplify most administration, collection management, and metadata management tasks removing the need to memorize the long list of iCommands. It allows users to manage content and metadata associated with content.
 
 Via the following link [Metalnx](https://icts-p-hpc-metalnx.cloud.icts.kuleuven.be/metalnx/login/), we can reach the Metalnx portal. 
@@ -15,30 +19,47 @@ Metalnx portal is mainly composed of two panes. The left pane keeps the relevant
 
 <img align="center" src="img/metalnx_general.png" width="400px">
 
-**Collections**: Under this tab, we can perform all data object and collection related activities. This includes adding new collections, uploading data objects, downloading collection/data objects, editing/deleting and giving user/group access permissions. This tab and its functionalities are mostly used in Metalnx.
+**Collections**: Under this tab, we can perform all data object (= a file) and collection related activities
+ 
+- Uploading files  
+- Moving files/collections  
+- Copying files/collections  
+- Renaming files/collections  
+- Applying metadata templates (see later)  
+- Downloading files  
 
-**Search**: This tab gives search options based on the metadata and properties parameters. (there is an open issue now)
+Behind any collection or file, you can press 'View info' for the following options:
 
-**Templates**: We can here add (create) our own metadata templates or import a template from outside in a json format.
+- Adding metadata to files/collections  
+- Adding files/collections to favorites  
+- Setting permissions  
+- Getting previews of files  
 
-**Shared Links**: It is possible to reach the links shared by other users.
+This tab and its functionalities are mostly used in Metalnx.
 
-**Favorites**: We can easily see our bookmarked collections and files.
+**Search**: This tab gives search options based on the metadata and properties parameters (currently not available).
 
-**Public**: We can reach the public area collections.
+**Templates**: We can here create our own metadata templates or import a template from outside in a json format. These can then be applied to files or collections.
 
-**Favorites**: We can see the files and collections moved to trash bin.
+**Shared Links**: Here you can see the links shared by other users.
+
+**Favorites**: Here you can see your bookmarked collections and files.
+
+**Public**: here you can reach the public area collections.
+
+**Trash**: Here you can see the files and collections moved to trash bin.
 
 Now let’s do some hands-on exercises:
 
-**Exercise1**:
+**Exercise 1: data objects, folders and metadata**:
 
 - Create a metalnx_test collection under your home directory.
-- Give read access to your friend recursively.
-- Upload a data object inside the collection.
-- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name, Unit: Your organization).
+- Upload a file inside the collection.
+- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name).  
+- Rename your file to 'testfile'.
+- Download testfile to your local machine.
 
- **Exercise2**:
+ **Exercise 2: metadata templates**:
 
 - Create one public metadata template with the name of “test_training” and it has to include at least two AVUs.
 - Create one private metadata template with the name of your choose.
@@ -47,7 +68,7 @@ Now let’s do some hands-on exercises:
 
 Take a look at the metadata of your collection and your uploaded file. As you can see, we can easily manage metadata on both collections and the files in them, even if they have different metadata.
 
-**Exercise3**:
+**Exercise 3: favorites and sharing**:
 
 - Add metalnx_test collection to your favorites.
 - Give “own” access permission to a friend and share this file link.
