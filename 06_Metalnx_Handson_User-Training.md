@@ -45,23 +45,20 @@ Now let’s do some hands-on exercises:
 - Add the private one on the metalnx_test collection.
 - Add one of the public metadata templates on the metalnx_test collection.
 
-Investigate the metadata of your collection and data object. We can easily come to a conclusion that managing metadata with different combinations (even multiple files may take different metadata than a collection) is quite manageable and easy.
+Take a look at the metadata of your collection and your uploaded file. As you can see, we can easily manage metadata on both collections and the files in them, even if they have different metadata.
 
 **Exercise3**:
 
-- Make this metalnx_test collection your favorite.
-- Add a new file to this collection using the favorite tab.
-- Give “own” access permission to your friend and share this file link.
-- Download the first file you created to your local machine.
-- Check your shared tab to see if you have any file for you. (If not, ask me to share one with you.)
+- Add metalnx_test collection to your favorites.
+- Give “own” access permission to a friend and share this file link.
+- Check your shared tab if there are any files shared with you. (If not, ask me to share with you one.)
 
-**Exercise4**:
-- Change the name of the second uploaded file.
-- Delete this renamed file.
+**Exercise4: deleting**:
+- Delete your file.
 - Delete metalnx_test collection.
-- Go to the trash tab and see your deleted items.
-- Permanently delete the renamed file (deleted).
-- Move deleted collection metalnx_test to public collection.
+- Go to the trash tab and look at your deleted items.
+- Permanently delete the deleted file.
+- Move the deleted collection metalnx_test to the public collection.
 
 As you have seen we can do lots of data management operations easily with the Metalnx portal.
 
