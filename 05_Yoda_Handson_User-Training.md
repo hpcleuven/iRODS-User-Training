@@ -4,7 +4,7 @@
 *-A VSC-account coupled to an iRODS account*    
 *-You should be added to some test groups by the HPC staff before starting this tutorial.*
 
-[Yoda](https://yoda.uu.nl/yoda-uu-nl/what-is-yoda/index.html) is a research data management solution developed by Utrecht University. Yoda portal is a web application for performing data management activities, such as managing access to your data and changing metadata. It allows users to deploy and manage their research data.
+[Yoda](https://yoda.uu.nl/yoda-uu-nl/what-is-yoda/index.html) is a research data management solution on top of iRODS developed by Utrecht University. Yoda portal is a web application for performing data management activities, such as managing access to your data and changing metadata. It allows users to deploy and manage their research data.
 
 You can reach the Yoda portal by clicking [VSC-Yoda]( https://icts-p-hpc-yoda-portal.cloud.icts.kuleuven.be/user/login) login page.
 
@@ -24,7 +24,7 @@ In VSC-Yoda portal, there are two main workspaces, “research” and “vault�
 
 VSC users are expected to use mostly this space.
 
-**Vault**: This area has “publish” functionality which VSC users will not use. Tier-1 Data service users will use this area as an output of research area and an input to compute system. It can be also used for short term archiving purposes.
+**Vault**: This area has a 'deposit' functionality which VSC users will not use. Tier-1 Data service users will use this area as an output of research area and an input to compute system. 
 
 **Group Manager**: To keep data in a secure way Yoda allows you to put the data in data compartments, which can only be accessed by members. The Group Manager can create category/subcategory/group as data compartments and their members. People with a “group manager” role can add members to a data compartment, remove them, and change their roles.
 
@@ -44,25 +44,24 @@ We can do now some hands-on exercises:
 
 **Exercise1**:  
 *Note: this first exercise can only be completed by users with the role of group manager*  
-- Create the project group.
-- Give required permission.
+- Check out the research group assigned to you.
+- Invite colleagues into your group.
 
 **Exercise2**:
-
-- Try to download any file.
-- In the tab 'research', in a group you are added to, add a collection named 'test' 
-- Make a file called 'test.txt' on your pc and try to upload it to the collection 'test' via the portal.
+- In the tab 'research', in a group you are added to, add a collection with 'test' + your name as title.  
+- Upload a file from your pc to the collection you just created.  
+- Try to download this file again. If you are doing this exercise with colleagues, you can try to download the file they uploaded.
 
 **Exercise3**:
 
-- Fill in default metadata form for the testcollection and submit it.
+- Fill in default metadata form for your collection.
 
 **Exercise4**:
 
-- Use the search field options to find your previously uploaded file test.txt. Feel free tot play around and search other things to increase your understanding of the search function.
+- Use the search field options to find your previously uploaded file. Feel free tot play around and search other things to increase your understanding of the search function.
 
 **Exercise5**:
 
 - Lock one of the collections.
-- Submit it to the vault.
+
 
