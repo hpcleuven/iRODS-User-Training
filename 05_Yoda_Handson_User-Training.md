@@ -64,7 +64,7 @@ Congratulations! You and your teammates have now a shared research-folder where 
 
 **Exercise3**:
 
-- Fill in default metadata form for your collection.
+- Fill in the default metadata form for your collection.
 
 **Exercise4**:
 
