@@ -1,9 +1,11 @@
 # Yoda Portal Client for VSC Users
+*This version of the tutorial is meant for the iRODS training for humanities researchers at KU Leuven*
 
-*Prerequisites:*  
+
+*Prerequisites:* 
+
 *-A VSC-account coupled to an iRODS account*    
-*-You should be added to some test groups by the HPC staff before starting this tutorial.*  
-*-Some of these exercises are made for groups, but you can do most of them alone*
+*-The dataset provided for the exercises*
 
 [Yoda](https://yoda.uu.nl/yoda-uu-nl/what-is-yoda/index.html) is a research data management solution on top of iRODS developed by Utrecht University. Yoda portal is a web application for performing data management activities, such as managing access to your data and changing metadata. It allows users to deploy and manage their research data.
 
@@ -56,9 +58,9 @@ Congratulations! You and your teammates have now a shared research-folder where 
 
 **Exercise2**:
 - Go to the tab 'research', and go to your research folder.
-- Add a collection with 'test' + your name as title.  
-- Upload a file from your pc to the collection you just created.  
-- Try to download this file again. You can also try to download the files of your teammates.
+- Add a collection named 'Medieval corpus' + your name. 
+- Upload the files of the dataset to this folder. You can select all the files at the same time.  
+- Try to download a file of your own, and a file of one of your teammates.
 
 **Exercise3**:
 
