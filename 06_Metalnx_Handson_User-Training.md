@@ -55,15 +55,17 @@ Now let’s do some hands-on exercises:
 
 - Create a metalnx_test collection under your home directory.
 - Upload a file inside the collection.
-- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name).  
+- Click on 'view info' to see some basic information about this file.
+- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name).
+- Look at the preview of your file, and try to edit the file (note: you can only edit certain file types, like .txt files).
 - Rename your file to 'testfile'.
 - Download testfile to your local machine.
 
  **Exercise 2: metadata templates**:
 
 - Create one public metadata template with the name of “test_training” and it has to include at least two AVUs.
-- Create one private metadata template with the name of your choose.
-- Add the private one on the metalnx_test collection.
+- Create one private metadata template with the name of your choice.
+- Add the private one on your testfile.
 - Add one of the public metadata templates on the metalnx_test collection.
 
 Take a look at the metadata of your collection and your uploaded file. As you can see, we can easily manage metadata on both collections and the files in them, even if they have different metadata.
@@ -74,7 +76,7 @@ Take a look at the metadata of your collection and your uploaded file. As you ca
 - Give “own” access permission to a friend and share this file link.
 - Check your shared tab if there are any files shared with you. (If not, ask me to share with you one.)
 
-**Exercise4: deleting**:
+**Exercise 4: deleting**:
 - Delete your file.
 - Delete metalnx_test collection.
 - Go to the trash tab and look at your deleted items.
