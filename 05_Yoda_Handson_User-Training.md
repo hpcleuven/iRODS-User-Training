@@ -75,6 +75,6 @@ Congratulations! You and your teammates have now a shared research-folder where 
 
 **Exercise 5**:
 
-- Lock one of the collections.
+- Lock your collection.
 
 
