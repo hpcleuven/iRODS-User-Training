@@ -1,7 +1,9 @@
 # Metalnx Portal Client for VSC Users
+*This version of the tutorial is meant for the iRODS training for humanities researchers at KU Leuven*
 
 *Prerequisites:*  
 *-A VSC-account coupled to an iRODS account*  
+*-The dataset provided for the exercises*
 
 Metalnx is a graphical user interface and serves as a client to iRODS. It help simplify most administration, collection management, and metadata management tasks removing the need to memorize the long list of iCommands. It allows users to manage content and metadata associated with content.
 
@@ -53,35 +55,42 @@ Now let’s do some hands-on exercises:
 
 **Exercise 1: data objects, folders and metadata**:
 
-- Create a metalnx_test collection under your home directory.
-- Upload a file inside the collection.
-- Click on 'view info' to see some basic information about this file.
-- Add one metadata AVU to the this uploaded file. (Attribute: Author, Value: your name).
-- Look at the preview of your file, and try to edit the file (note: you can only edit certain file types, like .txt files).
-- Rename your file to 'testfile'.
-- Download testfile to your local machine.
+- Create a collection named 'Medieval corpus' under your home directory.
+- Upload the files from the dataset to the collection. You can upload multiple datasets at a time.
+- Click on 'view info' to see some basic information about each of the files.
+- Add one metadata AVU to the this folder. (Attribute: Period, Value: Middle Ages).
+- Go to file 002_f01_m01_c11.txt. Click on 'view info' and then on preview.
+
+  Something is clearly wrong  with this file. Go ahead and edit the file in preview mode, then save it.
+
+- One of the files clearly has the wrong name. Please rename it to '001_f01_m01_c11.txt'.
+- Download one of the files to your local machine.
 
  **Exercise 2: metadata templates**:
 
-- Create one public metadata template with the name of “test_training” and it has to include at least two AVUs.
-- Create one private metadata template with the name of your choice.
-- Add the private one on your testfile.
-- Add one of the public metadata templates on the metalnx_test collection.
+- Create one private metadata template with the name of “Historical datasets” and it has to include at least two AVUs.
+- Create one public metadata template with the name of your choice.
+- Apply the public template one of your files.
+- Apply the template 'Historical datasets' to the collection' 'Medieval corpus'.
 
 Take a look at the metadata of your collection and your uploaded file. As you can see, we can easily manage metadata on both collections and the files in them, even if they have different metadata.
 
 **Exercise 3: favorites and sharing**:
 
-- Add metalnx_test collection to your favorites.
+- Add the 'Medieval corpus' collection to your favorites.
 - Give “own” access permission to a friend and share this file link.
 - Check your shared tab if there are any files shared with you. (If not, ask me to share with you one.)
 
 **Exercise 4: deleting**:
-- Delete your file.
-- Delete metalnx_test collection.
+- Go back to the collections tab, then to the collection 'Medieval corpus'
+- One of the files clearly doesn't belong in this collection here! Please search which one, and delete it. 
+- Delete the entire collection 'Medieval corpus'.
+
+  ...okay, perhaps we should not have done that. Let's try to get it back!
+  
 - Go to the trash tab and look at your deleted items.
 - Permanently delete the deleted file.
-- Move the deleted collection metalnx_test to the public collection.
+- Move the deleted collection metalnx_test to your home directory again.
 
 As you have seen we can do lots of data management operations easily with the Metalnx portal.
 
