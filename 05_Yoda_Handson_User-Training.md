@@ -49,7 +49,7 @@ We can do now some hands-on exercises:
 - Go to the 'group manager' tab. 
 
 Under 'Yoda groups', there are categories, which may contain subcollections, which contain research groups.
-You should be part of at least one research groups. If not, you will be added soon.
+You should be part of at least one research group. If not, you will be added soon.
 
 - If you have been made group manager, invite your teammates to the group. 
 - Click on your group to see some information about it on the right-hand side.
