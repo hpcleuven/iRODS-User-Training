@@ -2,7 +2,7 @@
 
 *Prerequisites:*  
 *-A VSC-account coupled to an iRODS account*    
-*-You should be added to some test groups by the HPC staff before starting this tutorial.*
+*-You should be added to some test groups by the HPC staff before starting this tutorial.*  
 *-Some of these exercises are made for groups, but you can do most of them alone*
 
 [Yoda](https://yoda.uu.nl/yoda-uu-nl/what-is-yoda/index.html) is a research data management solution on top of iRODS developed by Utrecht University. Yoda portal is a web application for performing data management activities, such as managing access to your data and changing metadata. It allows users to deploy and manage their research data.
