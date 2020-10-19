@@ -55,7 +55,7 @@ Now let’s do some hands-on exercises:
 
 **Exercise 1: data objects, folders and metadata**:
 
-- Create a collection named 'Medieval corpus' under your home directory.
+- Create a collection named 'Medieval corpus' under your home directory (the directory with your VSC-account name).
 - Upload the files from the dataset to the collection. You can upload multiple datasets at a time.
 - Click on 'view info' to see some basic information about each of the files.
 - Add one metadata AVU to the this folder. (Attribute: Period, Value: Middle Ages).
