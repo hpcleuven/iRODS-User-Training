@@ -45,7 +45,7 @@ To allow different communities to share the same Yoda implementation the concept
 
 We can do now some hands-on exercises:
 
-**Exercise1**:  
+**Exercise 1**:  
 - Go to the 'group manager' tab. 
 
 Under 'Yoda groups', there are categories, which may contain subcollections, which contain research groups.
@@ -56,21 +56,21 @@ You should be part of at least one research group. If not, you will be added soo
 
 Congratulations! You and your teammates have now a shared research-folder where you can put data and work together.
 
-**Exercise2**:
+**Exercise 2**:
 - Go to the tab 'research', and go to your research folder.
 - Add a collection named 'Medieval corpus' + your name. 
 - Upload the files of the dataset to this folder. You can select all the files at the same time.  
 - Try to download a file of your own, and a file of one of your teammates.
 
-**Exercise3**:
+**Exercise 3**:
 
 - Fill in the default metadata form for your collection.
 
-**Exercise4**:
+**Exercise 4**:
 
 - Use the search field options to find your previously uploaded file. Feel free tot play around and search other things to increase your understanding of the search function.
 
-**Exercise5**:
+**Exercise 5**:
 
 - Lock one of the collections.
 
