@@ -58,7 +58,10 @@ Congratulations! You and your teammates have now a shared research-folder where 
 
 **Exercise 2**:
 - Go to the tab 'research', and go to your research folder.
-- Add a collection named 'Medieval corpus' + your name. 
+- Add a collection named 'medieval corpus' + your name. 
+  
+  *This function is available in the next version of Yoda. For now, this folder has been made for you*  
+
 - Upload the files of the dataset to this folder. You can select all the files at the same time.  
 - Try to download a file of your own, and a file of one of your teammates.
 
