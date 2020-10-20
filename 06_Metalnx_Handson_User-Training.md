@@ -56,7 +56,7 @@ Now let’s do some hands-on exercises:
 **Exercise 1: data objects, folders and metadata**:
 
 - Create a collection named 'Medieval corpus' under your home directory (the directory with your VSC-account name).
-- Upload the files from the dataset to the collection. You can upload multiple datasets at a time.
+- Upload the files from the dataset to the collection. You can upload multiple files at a time.
 - Click on 'view info' to see some basic information about each of the files.
 - Go to file 002_f01_m01_c11.txt. Click on 'view info' and then on preview.
 
@@ -78,7 +78,7 @@ Take a look at the metadata of that file and collection. As you can see, we can 
 **Exercise 3: favorites and sharing**:
 
 - Add the 'Medieval corpus' collection to your favorites.
-- Give “own” access permission for one of your files to a friend and share the file link.
+- Give “own” access permission for one of your files to a friend. Check the box with 'shared link'.
 - Check your shared tab if there are any files shared with you. (If not, ask me to share with you one.)
 
 **Exercise 4: deleting**:
