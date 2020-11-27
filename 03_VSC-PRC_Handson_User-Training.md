@@ -37,7 +37,7 @@ cd $VSC_DATA
 
 
 ```sh
-git clone https://github.com/hpcleuven/iRODS-UserTraining-Climate.git
+git clone https://github.com/hpcleuven/iRODS-User-Training.git
 ``` 
 - The  Python iRODS API (PRC) and the VSC extensions are available as a module in the Tier-1 Compute system.
 Before using it you will need to load the corresponding module:
@@ -176,7 +176,7 @@ session.data_objects.put( [location of the file]  , [target destination of the f
 For example, if user vsc33731 wants to upload this to his training folder, it might look like this:
 
 ```py
-session.data_objects.put('/data/leuven/337/vsc33731/iRODS-UserTraining-Climate/molecules/alcl3.xyz','/kuleuven_tier1_pilot/home/vsc33731/training/')
+session.data_objects.put('/data/leuven/337/vsc33731/iRODS-User-Training/molecules/alcl3.xyz','/kuleuven_tier1_pilot/home/vsc33731/training/')
 ```
 
 This demonstrates that even using the VSCIRODSSession class all the functionalities of the Python iRODS Client (PRC) are still available. 
