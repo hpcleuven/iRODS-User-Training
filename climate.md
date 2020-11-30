@@ -7,3 +7,8 @@
 - [Interacting with iRODS 2: Python client](https://github.com/hpcleuven/iRODS-User-Training/blob/development/03_VSC-PRC_Handson_User-Training.md)
 - [Using iRODS in a HPC workflow](https://github.com/hpcleuven/iRODS-User-Training/blob/development/04_HPC_to_DATA_Handson_User-Training.md)
 
+  
+  
+    
+The topics above are only those taught in the most recent training session.    
+For tutorials on other topics, click 'view on github'.  
