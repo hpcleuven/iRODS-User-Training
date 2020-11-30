@@ -26,7 +26,7 @@ vsc-prc-put "molecules" --destination="~/training"
 - Does some calculation using the xyz files 
 - Create a results directory in the training iRODS collection
 - Upload the result file to iRODS
-- add job metadata to the results file
+- Add job metadata to the results file
 - Add some additional user metadata to the results file. 
 
 
