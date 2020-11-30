@@ -14,4 +14,4 @@ The topics above are only those taught in the most recent training session.
 For tutorials on other topics, click 'view on github'. 
 
 
-(Back)[index.md]
+[Back](index.md)
