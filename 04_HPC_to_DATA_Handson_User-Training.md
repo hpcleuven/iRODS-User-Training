@@ -1,8 +1,8 @@
 # DATA to HPC: integrate iRODS in batch job scripts
 
 *Prerequisites:*  
-*-A vsc-account and acces to the Tier-1 infrastructure of KU Leuven*  
-*-Permission to submit jobs on the Tier-1 system*  
+*-A vsc-account and acces to the Tier-1 or Tier-2 infrastructure of KU Leuven*  
+*-Permission to submit jobs on the Tier-1 or Tier-2 system*  
 *-Knowledge on how to use the HPC infrastructure*  
 *-Basic knowledge of command line (Bash) and shell scripting*  
 
