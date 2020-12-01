@@ -146,7 +146,7 @@ istream read test1
 **Exercise 1:**
 
 - Create two different collections in iRODS and move around using basic unix like iCommands (ipwd, ils, icd, imkdir, imv and irm).
-- At the end delete one of the collection permanently and remove the other one from your iRODS home.
+- At the end delete one of the collections permanently and remove the other one from your iRODS home.
 
 ### Functional iCommands
 With the commands in this section, we will do functional data operations like data uploading/downloading, access control and verifying/synchronizing data.
@@ -197,7 +197,7 @@ ils
 **Exercise 2:**
 
 - Upload the ThePlanetWeLiveOn.pdf book (you can get it from the following link with `wget http://www.learndev.org/dl/Science/EarthScience/ThePlanetWeLiveOn.pdf`) to your home directory in iRODS.
-- Create a new collection science_book  within your home directory
+- Create a new collection science_book within your home directory
 - Move ThePlanetWeLiveOn.pdf into this new collection.
 
 As we have seen before, data can be deleted by `irm (-f) example.txt`. But we will not do it now.
@@ -216,11 +216,11 @@ ils -L
     sha2:cQWOwjd7n0JM25XzWdaZPh9RQUvpQWa81Slilj/R0YA=    generic    /irods/a/home/public/example.txt
 ```
 
-Let’s try to understand what does this mean. The example.txt that we uploaded to iRODS seems at the logical path `/kuleuven_tier1_pilot/home/public/example.txt`. vsc33586 is the owner of the file and the numbers after user name show the replica of files in the iRODS system.
+Let’s try to understand what this means. The example.txt that we uploaded to iRODS has the logical path `/kuleuven_tier1_pilot/home/public/example.txt`. vsc33586 is the owner of the file and the numbers after user name show the replica of files in the iRODS system.
 “default” represent storage resource name. The size of the file is 24KB. The file is stored with a time stamp and a checksum. `/irods/a/home/public/example.txt` is the physical path of the file.
 
 #### Data Download
-We can get data-objects or collections from iRODS space, either to the specified local area or to the current working directory. Simply lets download data files from iRODS to our current VSC location.
+We can get data-objects or collections from iRODS, and place them either in the specified local area or the current working directory. Let's download data files from iRODS to our current VSC location.
 
 To download or to restore the file (copy it from iRODS to your VSC home):
 
@@ -240,7 +240,7 @@ We download the iRODS file example.txt as a new file called example-restore.txt 
 - download the collection science_book
 
 #### Access control and data sharing
-Collections in the iRODS logical name space have an attribute named Inheritance. `ichmod` can be used to manipulate this attribute on a per-Collection level.
+Collections in the iRODS logical namespace have an attribute named Inheritance. `ichmod` can be used to manipulate this attribute on a per-Collection level.
 ils -A displays ACLs and the inheritance status of the current working iRODS directory. iRODS has ACL with read, write and own rights.
 
 You can check the current access of your data with:
