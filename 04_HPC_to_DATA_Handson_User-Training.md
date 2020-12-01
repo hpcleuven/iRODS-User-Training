@@ -35,9 +35,9 @@ vsc-prc-iput molecules --destination="~/training"
 - You can use exercise_template.pbs as reference
 
 
-# Example-2: Create a job script that does the following:
+# Example-2: Create a job script running python code that will do the following:
 
-- Download all the files from irods collection molecules
+- Download all the files from irods collection molecules to the your script directory(workingdir)
 - Do some calculation using the xyz files (look at the templates in jobscripts)
 - Create a result directory in the irods training collection
 - Upload the output file to iRODS

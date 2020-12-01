@@ -33,9 +33,14 @@ scratchdir=$localdir/${PBS_JOBID%%.*}
 vsc-prc-iget ...
 
 # Count the number of Hydrogen molecules (H) in all xyz file
-# And store the result in a file hydrogens_count.out 
+# And store the result in a file hydrogens_count.out
 
-...
+filenames=`find . -name "*.xyz"`
+for filename in $filenames; do
+  name=$(basename "$filename" | cut -f 1 -d '.')
+  hydro=$(cat "$filename" | grep -c H)
+  echo $name $hydro >> hydrogens_count.out
+done
 
 # Create a results directory in the irods training collection
 
