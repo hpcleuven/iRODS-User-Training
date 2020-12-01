@@ -1,0 +1,14 @@
+#!/bin/bash 
+#PBS -A lt1_es2020
+#PBS -l nodes=1:ppn=28:broadwell
+#PBS -l walltime=00:30:00
+
+# Change directory to the working dir where job is submitted
+cd $PBS_O_WORKDIR
+
+# Add module for VSC irods tools
+module purge
+module load vsc-python-irodsclient/development
+
+# Call a python file.py
+python calculate.py
