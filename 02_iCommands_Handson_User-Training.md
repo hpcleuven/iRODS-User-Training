@@ -7,12 +7,12 @@
 This tutorial introduces iCommands, which give users a command-line interface to iRODS, and shows you how to perform simple data management tasks with them.
 
 ## Categorizing iCommands
-As a command line user interface to iRODS, more than 50 iCommands exist. However a regular user may use only a few of them for his/her daily needs. Therefore, if we categorize them in different groups, we can easily grab how they work.
+As a command line user interface to iRODS, more than 50 iCommands exist. However a regular user may use only a few of them for his/her daily needs. We can categorize them in the following groups:
+
 - Informative iCommands
 - Unix like iCommands
 - Functional iCommands
 - Metadata Related iCommands
-- Rule Based iCommands
 - Administrative iCommands
 
 ## Goal of the Training
@@ -35,7 +35,7 @@ After you have reached the Tier-1 to work on, to be able to interact with iRODS,
 ssh irods.hpc.kuleuven.be | bash
 ```
 
-If you are connecting from Tier-2 login node, you should then execute:
+If you are connecting from a Tier-2 login node, you should then execute:
 
 ```sh
 ssh irods.tier1.leuven.vsc | bash
@@ -50,23 +50,23 @@ The command that will print out all commands with their explanation is:
 ihelp
 ```
 
-To get help on a specific commands:
+To get help on a specific command:
 `ihelp iuserinfo` or `iuserinfo -h`
 
-If you would like to know the setting details you can execute the following command.
+If you would like to know the setting details you can execute the following command:
 
 ```sh
 ienv
 ```
 
-To know about the details of an user you can run the below command following with an user account.
+To get information about a user you can run the below command followed by a username.
 This command will show for example to which groups a user belongs:
 
 ```sh
 iuserinfo vscXXXXX
 ```
 
-To be able to learn what an error code stands for, you can then use the command below with a code number:
+To be able to learn what an error code stands for, you can then use the command below followed by the number of the error:
 
 ```sh
 ierror 826000
