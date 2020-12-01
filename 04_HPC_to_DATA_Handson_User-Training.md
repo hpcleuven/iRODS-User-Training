@@ -7,30 +7,39 @@
 *-Basic knowledge of command line (Bash) and shell scripting*  
 
 
-This training explain how to integrate the VSC-PRC command line tools with 
-job batch scripts to be able to stagein/stageout data from/to iRODS to the HPC scratch directory. 
+This training explain how to integrate the VSC-PRC and its command line tools with 
+job batch scripts to be able to stagein/stageout data from/to iRODS to the HPC scratch directory.
+
+The first example will be about how you can use VSC-PRC command line tools in a batch script dile. How to use the pyhton iRODS client with a batch file is the second example.  
+
+In the directory jobsscripts you can find template files which you can use as reference to create your script
 
 # Upload the data to irods 
 
 Create a training collection and upload all the molecules directory
 
 ```sh 
-vsc-prc-imkdir('training')
-vsc-prc-put "molecules" --destination="~/training"
+vsc-prc-imkdir training
+vsc-prc-iput molecules --destination="~/training"
 ```
 
 
-# Create a job script that does the following:
+# Example-1: Create a job script that does the following:
 
 - Download the the xyz files on the training/molecules irods collection to a directory in $VSC_SCRATCH
-- Does some calculation using the xyz files 
+- Do some calculation using the xyz files 
 - Create a results directory in the training iRODS collection
 - Upload the result file to iRODS
 - Add job metadata to the results file
-- Add some additional user metadata to the results file. 
+- Add some additional user metadata to the results file.
+- You can use exercise_template.pbs as reference
 
 
-In the directory jobsscripts you can find a template file (exercise1.pbs) 
-that you can use as reference to create your script
+# Example-2: Create a job script that does the following:
 
-
+- Download all the files from irods collection molecules
+- Do some calculation using the xyz files (look at the templates in jobscripts)
+- Create a result directory in the irods training collection
+- Upload the output file to iRODS
+- Add some metadata to the output file
+- You can use exercise2_example_py.pbs and calculate_template.py as reference
