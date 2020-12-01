@@ -7,12 +7,12 @@
 *-Basic knowledge of command line (Bash) and shell scripting*  
 
 
-This training explain how to integrate the VSC-PRC and its command line tools with 
+This training explains how to integrate the VSC-PRC and its command line tools with 
 job batch scripts to be able to stagein/stageout data from/to iRODS to the HPC scratch directory.
 
-The first example will be about how you can use VSC-PRC command line tools in a batch script dile. How to use the pyhton iRODS client with a batch file is the second example.  
+The first exercise will be about how you can use the VSC-PRC command line tools in a batch script. The second exercise is how to use the Python iRODS client with a batch file.
 
-In the directory jobsscripts you can find template files which you can use as reference to create your script
+In the directory jobsscripts, you can find template files which you can use as reference to create your script.
 
 # Upload the data to irods 
 
