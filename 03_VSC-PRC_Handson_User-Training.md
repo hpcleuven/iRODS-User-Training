@@ -1,11 +1,11 @@
 # Introduction to Python iRODS Client (PRC) and VSC-PRC tools
 
 *Prerequisites:*  
-*-A VSC account and acces to the Tier-1 infrastructure of KU Leuven*  
+*-A vsc-account and acces to the Tier-1 infrastructure of KU Leuven*  
 *-Basic knowledge of command line (Bash)*   
 *-Basic knowledge of Python is useful*    
 
-This training introduces you to the basics of using the iRODS client API implemented in Python as well as the additional functions and tools developed by VSC to extend the iRODS Python API functionalities. The main feature of the VSC extensions is the possibility of using wildcards ("\*") and tildes ("~") for specifying iRODS data objects and collections. 
+This training introduces you to the basics of using the iRODS client API implemented in Python, as well as the additional functions and tools developed by VSC to extend the iRODS Python API functionalities. The main feature of the VSC extensions is the possibility of using wildcards ("\*") and tildes ("~") for specifying iRODS data objects and collections. 
 
 ## Goal of this training
 You will learn how to use the Python iRODS API (PRC) to interact with the Tier-1 Data service iRODS infrastructure.
@@ -26,7 +26,14 @@ This training is intended to be executed on the VSC Tier-1 (BrENIAC) system. We 
 ### Environment setup
 
 - Connect to BrENIAC with your vsc-account using your favourite client. 
-- Copy the course material in your home directory
+- Go to your data folder:
+```sh
+cd $VSC_DATA
+```
+  It is good practice to store files not in your home folder, but in your data folder, since a filled-up home folder can cause login issues.
+  The home directory is mainly meant for configuration files.
+  
+- Copy the course material in your data directory
 
 
 ```sh
@@ -63,7 +70,8 @@ your access by re-executing one of these commands again.
 
 ###  Working with collections and data objects
 
-We will first start using iRODS interactively with ipython. 
+We will first start using iRODS interactively with ipython.  
+That way, we can execute commands line by line, which is great for experimenting. 
 So we will need to install locally ipython:
 
 ```sh
@@ -84,7 +92,7 @@ ipython
 ``` 
 
 The first thing we need to do is to import the VSCIRODSSession module and create an iRODS session.
-This class is derived from PRC's irods.iRODSSession class, and as such you can still use it to do what PRC is capable of (see https://github.com/irods/python-irodsclient). Here, we will focus on the functionalities that are added by VSC-PRC
+This class is derived from PRC's irods.iRODSSession class, and as such you can still use it to do what PRC is capable of (see https://github.com/irods/python-irodsclient). Here, we will focus on the functionalities that are added by VSC-PRC.  
 
 ```py
 from vsc_irods.session import VSCiRODSSession
@@ -93,11 +101,18 @@ session = VSCiRODSSession(txt='-')
 In addition to the keyword arguments for irods.iRODSSession, it also accepts a txt argument. This specifies where the session's print output should be directed to, with the default '-' referring to stdout.
 
 Note that when using the VSCiRODSSession class is best practice to initiate it using the with construct to 
-ensure that the session is cleanly terminated, even if an error occurs. 
+ensure that the session is cleanly terminated, even if an error occurs:
+
+```py
+from vsc_irods.session import VSCiRODSSession
+with VSCiRODSSession(txt="-") as session:
+    
+    [your code here]
+```
 
 The VSC-PRC library provides a number of functions grouped by functionality:
 
-- path functions: functions related with navigation and path information 
+- path functions: functions related to navigation and path information 
   - get_irods_home
   - get_irods_cwd
   - get_absolute_irods_path
@@ -119,7 +134,7 @@ The VSC-PRC library provides a number of functions grouped by functionality:
 
 Let's try some of those functions:
 
-Check wich is the iRODS home directory and de current working directory:
+Printing the iRODS home directory and the current working directory:
 
 ```py
 session.path.get_irods_home()
@@ -131,7 +146,7 @@ Create a collection `training` on your iRODS home directory:
 ```py
 session.path.imkdir('training')
 ```
-we can verify that the collection has been created by requesting the absolute path:
+We can verify that the collection has been created by requesting the absolute path (the full path from the root):
 
 ```py
 session.path.get_absolute_irods_path('training')
@@ -143,42 +158,48 @@ Now we can change to the directory we just created:
 session.path.ichdir('training')
 ```
 
-and we can see which is now the current working directory and the home:
+We can now check the current working directory, which is different from the home directory:
 
 ```py
 session.path.get_irods_cwd()
 session.path.get_irods_home()
 ```
 
-Let's upload some data into our training iRODS collection:
+Let's upload some data into our training iRODS collection!
 
-First let's use the iRODS Python to upload a single dataobject:
+First let's use the iRODS Python Client to upload a single dataobject from the molecules folder, alcl3.xyz, to iRODS.
+You will need to fill in the correct path to the file you want to upload:
 
 ```py
-session.data_objects.put('/data/leuven/307/vsc30706/IRODS/molecules/alcl3.xyz','/kuleuven_tier1_pilot/home/vsc30706/training/')
+session.data_objects.put( [location of the file]  , [target destination of the file])
 ```
-This demonstrate that even using the VSCIRODSSession class all the functionalities of the Python iRODS Client (PRC) are still available. 
+For example, if user vsc33731 wants to upload this to his training folder, it might look like this:
+
+```py
+session.data_objects.put('/data/leuven/337/vsc33731/iRODS-User-Training/molecules/alcl3.xyz','/kuleuven_tier1_pilot/home/vsc33731/training/')
+```
+
+This demonstrates that even using the VSCIRODSSession class all the functionalities of the Python iRODS Client (PRC) are still available. 
 
 Let's use the search.find() function to verify that the file has been uploaded to iRODS:
 
 ```py
-irods_path = '/kuleuven_tier1_pilot/home/vsc30706/training/'
+irods_path = '/kuleuven_tier1_pilot/home/vsc33731/training/'
 session.search.find(irods_path,types='f')
 ```
 This command returns a list of iRODS data objects paths (types='f' means list files) which match a given pattern. As we have not defined a pattern then the default value ("\*") is used. So, the result will be a list containing the iRODS paths of all the files in the collection `irods_path`.  
 
-If we want to print the list of the obtained files we can do:
-
+We can loop over the list to print the search results:
 
 ```py
 for item in session.search.find(irods_path, types='f'):
 	print(item)
 ```
 
-As the PRC funtion works well has the disadvantage that only works with single data object or collections.
-Here the VSC-PRC bulk functionalities provide more flexibility as they allow to select files using wildcards. 
+While this PRC function works well, it has the disadvantage that only works with single data object or collections.
+Here the VSC-PRC bulk functionalities provide more flexibility, as they allow to select files using wildcards. 
 
-So, let's now upload to the training iRODS collection all files with extension .xyz.
+So, let's now upload to the training iRODS collection all files with extension .xyz:
 
 ```py
 session.bulk.put('./molecules/*.xyz', irods_path)
@@ -191,7 +212,7 @@ for item in session.search.find(irods_path, types='f'):
 	print(item)
 ```
 Let's now create a subdirectory `results` on our molecules collection and see how we can both list all 
-subcollections and files of a given collection with the find function:
+subcollections and files of a given collection with the find function. As 'f' stands for files, 'd' stands for directories or collections.
 
 ```py
 session.path.imkdir('results')
@@ -203,13 +224,13 @@ for item in session.search.find(irods_path, types='d,f'):
 ###  Adding metadata to files 
 
 Until now we have seen how to use the search.find function to search for collections and data objects 
-based on their paths and filenames. But iRODS offer also the possibility to add metadata to them 
-in the form of tuples or triples Attribute-Value-[Unit] also called AVUs. 
+based on their paths and filenames. But iRODS also offers the possibility to add metadata to them 
+in the form of tuples or triples (Attribute-Value-[Unit]), also called AVUs. 
 
 Let's start adding metadata to our `training` collection to identify it with the associated research project.
 We will add a tuple Attribute-Value (Project, Training) and we will apply this metadata to the training collection
 and all its subcollections and data objects by using the recursive option. As we have also selected the verbose 
-option we will see to which collections and dataobjects the metadata is added: 
+option, we will see to which collections and dataobjects the metadata is added: 
 
 ```py
 avu1= ('Project', 'Training')
@@ -228,8 +249,7 @@ session.bulk.metadata(irods_path + '/c*.xyz' , object_avu=avu2, action='add', re
 session.bulk.metadata(irods_path + '/sih4.xyz' , object_avu=avu3, action='add', recurse=True, verbose=True)
 ```
 
-Now we can use this metadata information to perform searches on the iRODS collections.
-And use this information to download all the selected files to our local directory:
+Now we can use this metadata information to perform searches on the iRODS collections and to download all the selected files to our local directory.
 Let's download all the files that were used in Experiment1 using the bulk.get function: 
 
 
@@ -296,7 +316,7 @@ Hint: You will need to use the following  PRC functions:
   - Get the collection information: 
 
   ```py
-  coll = session.collections.get('/kuleuven_tier1_pilot/home/vsc30706/training')
+  coll = session.collections.get('/kuleuven_tier1_pilot/home/vsc33731/training')
   ```
 
   This command will store in the coll variable all the information related to the collection. 
@@ -318,7 +338,7 @@ Hint: You will need to use the following  PRC functions:
 
   where:
 
-  - 'read' is the kind of permission we want to give (other option are own, write, null)
+  - 'read' is the kind of permission we want to give (other options are 'own', 'write' and 'null')
   - coll.path is the path of the collection we want to modify obtained the previous session.collection.get()
   - 'lt1_es2020' is the name of the group to whom we want to give read access
   - session.zone is the iRODS zone to which this collection belongs and will be taken from the session information (in our case: kuleuven_tier1_pilot)

@@ -1,7 +1,7 @@
 # iCommands for VSC Users
 
 *Prerequisites:*  
-*-A VSC account (or your own iRODS environment)*  
+*-A vsc-account (or your own iRODS environment)*  
 *-Basic knowledge of command line (Bash) is useful*  
 
 This training introduces you to the basics of what iCommands are and how we do simple data management as a user with iCommands.
@@ -135,6 +135,14 @@ irm -r test1
 ```
 
 **Note**: The irmtrash command should be used to delete data-objects in the trash collection.
+
+In bash, you can print the contents of a file with the `cat`-command.  
+In iRODS, we can do the same with the command `istream` and the option 'read'.
+The following would print the contents of the file test1 to the terminal:
+
+```sh
+istream read test1
+```
 
 **Exercise 1:**
 

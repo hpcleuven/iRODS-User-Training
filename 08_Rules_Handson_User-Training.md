@@ -1,7 +1,7 @@
 # iRules for VSC Users
 
 *Prerequisites:*       
-*-A VSC account (or your own iRODS environment)*     
+*-A vsc-account (or your own iRODS environment)*     
 *-Basic knowledge of SQL is useful*  
 
 

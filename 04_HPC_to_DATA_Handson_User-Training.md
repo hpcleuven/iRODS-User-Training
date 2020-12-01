@@ -1,10 +1,10 @@
 # DATA to HPC: integrate iRODS in batch job scripts
 
 *Prerequisites:*  
-*-A VSC account and acces to the Tier-1 infrastructure of KU Leuven*
-*-Permission to submit jobs on the Tier-1 system*
-*-Knowledge on how to use the HPC infrastructure*
-*-Basic knowledge of command line (Bash) and shell scripting*
+*-A vsc-account and acces to the Tier-1 of Tier-2 infrastructure of KU Leuven*  
+*-Permission to submit jobs on the Tier-1 or Tier-2 system*  
+*-Knowledge on how to use the HPC infrastructure*  
+*-Basic knowledge of command line (Bash) and shell scripting*  
 
 
 This training explain how to integrate the VSC-PRC command line tools with 
@@ -26,7 +26,7 @@ vsc-prc-put "molecules" --destination="~/training"
 - Does some calculation using the xyz files 
 - Create a results directory in the training iRODS collection
 - Upload the result file to iRODS
-- add job metadata to the results file
+- Add job metadata to the results file
 - Add some additional user metadata to the results file. 
 
 
