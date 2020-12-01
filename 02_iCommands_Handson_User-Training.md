@@ -4,8 +4,7 @@
 *-A vsc-account (or your own iRODS environment)*  
 *-Basic knowledge of command line (Bash) is useful*  
 
-This training introduces you to the basics of what iCommands are and how we do simple data management as a user with iCommands.
-To this end we will make show of the icommands which is an Unix utilities that give users a command-line interface to iRODS.
+This tutorial introduces iCommands, which give users a command-line interface to iRODS, and shows you how to perform simple data management tasks with them.
 
 ## Categorizing iCommands
 As a command line user interface to iRODS, more than 50 iCommands exist. However a regular user may use only a few of them for his/her daily needs. Therefore, if we categorize them in different groups, we can easily grab how they work.
