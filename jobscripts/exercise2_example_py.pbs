@@ -11,4 +11,4 @@ module purge
 module load vsc-python-irodsclient/development
 
 # Call a python file.py
-python calculate.py
+python calculate_template.py
