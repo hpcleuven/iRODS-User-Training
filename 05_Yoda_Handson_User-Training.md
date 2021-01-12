@@ -9,6 +9,8 @@
 
 You can reach the Yoda portal by clicking [here]( https://icts-p-hpc-yoda-portal.cloud.icts.kuleuven.be/user/login).
 
+<img align="center" src="img/yoda_password.png" width="400px">
+
 In VSC-Yoda portal, there are two main workspaces, “research” and “vault”.
 
 **Research**: Collaboration workspace for a research group. No restrictions on the organization of data in folders. Metadata can be added to a folder. When all required metadata has been added a folder can be archived. You can view/edit/add metadata for a dataset that will be placed in the vault.
