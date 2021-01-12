@@ -316,7 +316,7 @@ I+hXKW8cY3IZ1KZUJlFE8yPRltdSstwnONohiUr3UTo=
 
 So we can confirm that this data object/file is the same and we don’t detect any error during its transmission or storage.
 
-**Exercise 5:**
+**Exercise 4:**
 
 Confirm the data integrity of example1.txt data object.
 
@@ -347,7 +347,7 @@ synchronizes recursively the data from the iRODS collection foo1 to another iROD
 
 How does this command work? The command compares the checksum values and file sizes of the source and target files to determine whether synchronization is needed. 
 
-**Exercise 6:**
+**Exercise 5:**
 
 - Download mymessage collection to your VSC system (`iget -r mymessage`).
 - Add test1.txt file inside this directory.
@@ -374,7 +374,7 @@ We can also add/bundle an iRODS collection into a tar file by using `ibun -c` co
   ibun -cDtar test.tar myCollection1
 ```
 
-**Exercise 7:**
+**Exercise 6:**
 
 - Create a “test.tar” file composed of folder and files in your VSC. Or get a compressed file with corresponding extensions.
 - Upload this file to iRODS with using tag (-Dtar flag) as a good practice.
