@@ -204,8 +204,7 @@ So, let's now upload to the training iRODS collection all files with extension .
 ```py
 session.bulk.put('./molecules/*.xyz', irods_path)
 ```
-We can execute again the same find command we used before to verify that indeed all files with extension .xyz have been uploaded
-while the files README and molecule_names.txt were not. 
+We can execute again the same find command we used before to verify that indeed all files with extension .xyz have been uploaded. 
 
 ```py
 for item in session.search.find(irods_path, types='f'):
@@ -343,14 +342,4 @@ Hint: You will need to use the following  PRC functions:
   - 'lt1_es2020' is the name of the group to whom we want to give read access
   - session.zone is the iRODS zone to which this collection belongs and will be taken from the session information (in our case: kuleuven_tier1_pilot)
 
-- Finally create a new local directory named `molecules.copy` and download all the files that where created with the OPenBabel software.
-
-
-
-
-
-
-
-
-
-
+- Finally create a new local directory named `molecules_copy` and download all the files that were created with the OPenBabel software.
