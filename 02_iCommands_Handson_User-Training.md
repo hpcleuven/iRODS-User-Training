@@ -29,7 +29,15 @@ In this course we will use the Tier-1 login node as our user interface. But you 
 In the future we will also be able to use compute nodes.
 
 ### Connecting to iRODS
-After you have reached the Tier-1 to work on, to be able to interact with iRODS, as a VSC user you will need to activate the service by executing the following commands:
+To be able to interact with iRODS, as a VSC user you will need to activate the service by executing one of the following commands:
+
+After you have reached the Tier-1 to work on, you should use:
+
+```sh
+irods-setup | bash
+```
+
+or,
 
 ```sh
 ssh irods.hpc.kuleuven.be | bash
@@ -38,8 +46,16 @@ ssh irods.hpc.kuleuven.be | bash
 If you are connecting from a Tier-2 login node, you should then execute:
 
 ```sh
+irods-setup | bash
+```
+
+or,
+
+```sh
 ssh irods.tier1.leuven.vsc | bash
 ```
+
+**Note**: As you have seen, `irods-setup | bash` command can work both in Tier-1 and Tier-2 login nodes. Besides, to avaoid Pseudo-terminal warnings it is recommended to use the same command in compute nodes, meaning in batch scripts once required.
 
 ### Informative iCommands
 These commands help us find and understand some useful information. We may not need these commands directly when we work with data, however we use them to discover what we need.
