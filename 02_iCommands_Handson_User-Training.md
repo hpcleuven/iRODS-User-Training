@@ -55,7 +55,7 @@ or,
 ssh irods.tier1.leuven.vsc | bash
 ```
 
-**Note**: As you have seen, `irods-setup | bash` command works both in Tier-1 and Tier-2 login nodes. esides, it is recommended to use the same command in compute nodes, meaning in batch scripts once required.
+**Note**: As you have seen, `irods-setup | bash` command can work both in Tier-1 and Tier-2 login nodes. Besides, to avaoid Pseudo-terminal warnings it is recommended to use the same command in compute nodes, meaning in batch scripts once required.
 
 ### Informative iCommands
 These commands help us find and understand some useful information. We may not need these commands directly when we work with data, however we use them to discover what we need.
