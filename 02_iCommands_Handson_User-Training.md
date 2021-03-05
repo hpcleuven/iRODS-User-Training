@@ -32,14 +32,16 @@ In the future we will also be able to use compute nodes.
 ### Connecting to iRODS
 After you have reached the Tier-1 to work on, to be able to interact with iRODS, as a VSC user you will need to activate the service by executing the following commands:
 
+* If you are logged in to the Tier-1 or Tier-2 cluster of KU Leuven:
+
 ```sh
-ssh irods.hpc.kuleuven.be | bash
+irods-setup | bash
 ```
 
-If you are connecting from Tier-2 login node, you should then execute:
+* If you want to connect from a HPC cluster of another Flemish university:
 
 ```sh
-ssh irods.tier1.leuven.vsc | bash
+ssh login.hpc.kuleuven.be irods-setup | bash
 ```
 
 ### Informative iCommands
