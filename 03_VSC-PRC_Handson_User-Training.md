@@ -37,10 +37,10 @@ Before using it you will need to load the corresponding module:
 
 ```sh
 module load Python/3.7.4-GCCcore-8.3.0
-module load vsc-python-irodsclient/development
+module load vsc-python-irodsclient/0.1-python-irodsclient-0.8.4
 ``` 
 
-Note that the vsc-python-irodsclient/development will load a python module if there is none already loaded.
+Note that the vsc-python-irodsclient/0.1-python-irodsclient-0.8.4 will load a python module if there is none already loaded.
 In order to have full control about which Python version is used it is recommended to prior to load the vsc-prc-python module 
 to load the Python version you want to work with.
 
