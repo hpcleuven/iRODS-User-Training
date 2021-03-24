@@ -5,7 +5,7 @@
 
 Metalnx is a graphical user interface and serves as a client to iRODS. It help simplify most administration, collection management, and metadata management tasks removing the need to memorize the long list of iCommands. It allows users to manage content and metadata associated with content.
 
-You can reach the Metalnx portal by clicking [here](https://icts-p-hpc-metalnx.cloud.icts.kuleuven.be/metalnx/login/). 
+You can reach the Metalnx portal by clicking [here](https://irods.hpc.kuleuven.be/metalnx/). 
 
 You will need to authenticate with your institutional account and then the password request will be done automatically.
 Users from some institutions might encounter a second login page, but the credentials should already be filled in.
