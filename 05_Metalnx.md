@@ -18,4 +18,4 @@ This tutorial is meant for VSC-users who would rather access and manage their da
 Users should have a Metalnx account.
 
 ## Link
-[Metalnx tutorial](https://github.com/hpcleuven/iRODS-User-Training/blob/master/06_Metalnx_Handson_User-Training.md)
+[Metalnx tutorial](https://github.com/hpcleuven/iRODS-User-Training/blob/master/05_Metalnx_Handson_User-Training.md)
