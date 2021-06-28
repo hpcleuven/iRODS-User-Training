@@ -15,7 +15,7 @@ They will learn how to execute basic data management actions in Metalnx through 
 ## Target audience
 This tutorial is meant for VSC-users who would rather access and manage their data in a graphical user interface than via the command line.
 ## Prerequisites 
-Users should have a Metalnx account.
+Users should have an VSC-account and an iRODS account at KU Leuven.
 
 ## Link
 [Metalnx tutorial](https://github.com/hpcleuven/iRODS-User-Training/blob/master/05_Metalnx_Handson_User-Training.md)
