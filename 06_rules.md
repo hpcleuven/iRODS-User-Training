@@ -24,5 +24,5 @@ Users should have an VSC-account and an iRODS account at KU Leuven, or another i
 They should be familiar with the Linux command line.
 
 ## Link
-[Part 1: explanation](https://github.com/hpcleuven/iRODS-User-Training/blob/master/07_Rules_User-Training.pdf)  
-[Part 2: hands-on exercises](https://github.com/hpcleuven/iRODS-User-Training/blob/master/08_Rules_Handson_User-Training.md)
+[Part 1: explanation](https://github.com/hpcleuven/iRODS-User-Training/blob/master/06_Rules_User-Training.pdf)  
+[Part 2: hands-on exercises](https://github.com/hpcleuven/iRODS-User-Training/blob/master/07_Rules_Handson_User-Training.md)

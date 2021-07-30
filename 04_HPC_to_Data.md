@@ -13,7 +13,7 @@ The course is meant for VSC-users who want to integrate iRODS into their HPC wor
 
 ## Prerequisites 
 Users should have a VSC-account, an iRODS account and credits to submit jobs to the Tier-2 or Tier-1 system of KU Leuven, and be familiar with the workflow of writing job scripts.
-They should have followed [the tutorial on the Python iRODS Client](3_Python_client.md).
+They should have followed [the tutorial on the Python iRODS Client](03_Python_client.md).
 
 ## Link
 [HPC to Data tutorial](https://github.com/hpcleuven/iRODS-User-Training/blob/master/04_HPC_to_DATA_Handson_User-Training.md)
