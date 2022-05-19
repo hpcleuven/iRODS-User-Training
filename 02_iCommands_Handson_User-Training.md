@@ -603,9 +603,9 @@ iget molecules.tar
   These are so called 'text corpora', featuring a set of texts in a certain language.
 - Make a collection called 'languages' and upload the files to it.
 - Add the following AVU's to the files:
-    - Attrbute 'language' and value 'dutch' to corpus1.txt
-    - Attrbute 'language' and value 'french' to corpus2.txt
-    - Attrbute 'language' and value 'latin' to corpus3.txt
+    - Attribute 'language' and value 'dutch' to corpus1.txt
+    - Attribute 'language' and value 'french' to corpus2.txt
+    - Attribute 'language' and value 'latin' to corpus3.txt
 - Oops, we made a mistake! Open the file corpus2.txt, and look what the language is. 
   Overwrite the current AVU with one with the correct value (tip: check the documentation of imeta with `imeta -h`).
 - Execute a query which searches all files which contain Dutch text.
