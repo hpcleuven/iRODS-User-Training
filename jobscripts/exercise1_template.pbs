@@ -10,7 +10,7 @@
 # As the token last 7 days this should give enough time to complete most of the jobs
 # Run it through a .sh file not to have an error. 
 
-bash get_iRODS_session.sh
+irods-setup | bash
 
 # Add module for VSC irods tools
 
