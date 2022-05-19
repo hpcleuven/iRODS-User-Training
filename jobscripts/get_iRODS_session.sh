@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#Execute the outputted script with bash to setup your irods invironment
+#Execute the outputted script with bash to setup your irods environment
 #and authenticate to the irods server.
 
-ssh irods.hpc.kuleuven.be | bash
-#ssh irods.tier1.leuven.vsc | bash
+irods-setup | bash
