@@ -15,7 +15,7 @@ bash get_iRODS_session.sh
 # Add module for VSC irods tools
 
 module purge
-module load vsc-python-irodsclient/development
+module load vsc-python-irodsclient/0.1-python-irodsclient-0.8.4
 
 #Set the working directories local and in iRODS:
 
