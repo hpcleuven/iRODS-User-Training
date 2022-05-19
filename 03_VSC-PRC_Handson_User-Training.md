@@ -337,7 +337,7 @@ with VSCiRODSSession(txt='-') as session:
 
     os.mkdir('organic_molecules')
 
-    session.bulk.get('/c*.xyz', 'organic_molecules', recursive=True)
+    session.bulk.get(irods_path + '/c*.xyz', 'organic_molecules', recursive=True)
 ```
 
 </details>
