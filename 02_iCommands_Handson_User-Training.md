@@ -118,7 +118,7 @@ To copy a data-object (file) or collection (directory) to another data-object or
 For example, if we want to copy “test” collection that we created to the same directory with a different name “test1”:
 
 ```sh
-icp –r test test1
+icp -r test test1
 ```
 
 To move/rename an irods data-object (file) or collection (directory) to another, data-object or collection, we use `imv`.
@@ -129,7 +129,7 @@ imv test1 test/
 ```
 
 To remove one or more data-object or collection from iRODS space, we use `irm`. By default, the data-objects are moved to the trash collection (/kuleuven_tier1_pilot/trash) unless the -f option is used.
-The –r option is used for collections. Now we can remove test1 collection.
+The -r option is used for collections. Now we can remove test1 collection.
 
 ```sh
 irm -r test1
@@ -168,7 +168,7 @@ With the linux command `ls` we can check that the file has been created.
 We now upload the data to the iRODS.
 
 ```sh
-iput –K example.txt
+iput -K example.txt
 ```
 
 *The flag -K triggers iRODS to create a checksum and store this checksum in the iCAT metadata catalogue.*
@@ -214,12 +214,12 @@ We can get data-objects or collections from iRODS, and place them either in the 
 To download or to restore the file (copy it from iRODS to your VSC home):
 
 ```sh
-iget –K example.txt example-restore.txt
+iget -K example.txt example-restore.txt
 ```
 
 We download the iRODS file example.txt as a new file called example-restore.txt in our linux home directory. Here the flag -K triggers iRODS to verify the checksum. Checksums are used to verify data integrity upon data moving.
 
-*To get the progress feedback, we can use –P flag.*
+*To get the progress feedback, we can use -P flag.*
 
 **Note**: The iput and iget commands also work for directories/collections, simply use the -r (for recursive) flag.
 
@@ -231,7 +231,7 @@ ils -A displays ACLs and the inheritance status of the current working iRODS dir
 You can check the current access of your data with:
 
 ```sh
-ils –r –A
+ils -r -A
 
 /kuleuven_tier1_pilot/home/public:
         ACL - g:public#kuleuven_tier1_pilot:own
@@ -282,7 +282,7 @@ For confirming data integrity, the checksum of a data object or a collection can
 We can confirm the checksum of one or more data-object or collection from iRODS. Let’s first check the checksum of mymessage collection in iRODS.
 
 ```sh
-ichksum –r mymessage
+ichksum -r mymessage
 
 C- /kuleuven_tier1_pilot/home/public/mymessage:
     example1.txt    sha2:cQWOwjd7n0JM25XzWdaZPh9RQUvpQWa81Slilj/R0YA=
@@ -336,13 +336,13 @@ How does this command work? The command compares the checksum values and file si
 
 To upload and download structured files such as tar files to/from iRODS, we can use `ibun` command.
 
-A tar file containing many small files can be created with normal unix tar command on our local machine . We can then upload the tar file to the iRODS server as a normal iRODS file. Furthermore, `ibun –x` command can be used to extract/untar the uploaded tar file. The extracted subfiles and subdirectories will then be appeared as normal iRODS files and sub-collections.
+A tar file containing many small files can be created with normal unix tar command on our local machine . We can then upload the tar file to the iRODS server as a normal iRODS file. Furthermore, `ibun -x` command can be used to extract/untar the uploaded tar file. The extracted subfiles and subdirectories will then be appeared as normal iRODS files and sub-collections.
 
 As a good practice we can tag the tar file using the -Dtar flag when uploading the file with iput. The dataType tag can be added later with the isysmeta command. For example:
 isysmeta mod /kuleuven_tier1_pilot/home/vsc33586/mydir.tar datatype 'tar file'
 
 ```sh
-  tar -chlf test.tar –C myCollection my file
+  tar -chlf test.tar -C myCollection my file
   iput -Dtar test.tar
   ibun -x test.tar test_collection
 ```
