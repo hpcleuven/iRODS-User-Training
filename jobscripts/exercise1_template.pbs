@@ -8,14 +8,14 @@
 # your batch scripts to be sure there is an active session 
 # at the moment the iRODS commands will be executed.
 # As the token last 7 days this should give enough time to complete most of the jobs
-# Run it through a .sh file not to have an error. 
-
-bash get_iRODS_session.sh
+ 
+#irods-setup --zone tier1-pilot | bash
+irods-setup | bash
 
 # Add module for VSC irods tools
 
 module purge
-module load vsc-python-irodsclient/development
+module load vsc-python-irodsclient/0.1-python-irodsclient-0.8.4
 
 #Set the working directories local and in iRODS:
 

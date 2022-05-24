@@ -265,81 +265,118 @@ and dataobjects and the option force=True to completely remove the files (iRODS 
 session.bulk.remove(irods_path, recurse=True, force=True, verbose=True)
 ```
 
+### Sharing data
+
+You can give people access to your data as follows: 
+
+```py
+from irods.access import iRODSAccess
+acl = iRODSAccess(<access_type>, <collection/dataobject_path>, <username>) 
+session.permissions.set(acl)
+```
+
+- 'access_type' can be any of the following:
+    - 'read'
+    - 'write'
+    - 'own'
+
+- 'username' can either be the name of a user or the name of a group.
+
+If you are applying the permissions to a collection, you can add the 'recursive' parameter to extend the access to any data objects and subcollections:  
+`session.permissions.set(acl, recursive=True)`
+
+You can remove permissions again with `session.permissions.remove(<acl>)`.  
+Note that these methods were not added by the VSC-PRC extension, so they cannot handle wildcards and tildes.  
+Instead, they need the full path of the collection or data object. 
+
 
 ##  Exercises 
 
-### Exercise 1 
+Let's do the exercises below! 
 
-VSC-PRC also comes with a set of scripts which make it easy to use the
-Python module from a Unix shell:
 
-- vsc-prc-find
-- vsc-prc-iget
-- vsc-prc-iput
-- vsc-prc-imkdir
-- vsc-prc-irm
-- vsc-prc-imeta
-- vsc-prc-add-job-metadata
+Before starting the exercises, please clone the [git repository](https://github.com/hpcleuven/iRODS-User-Training) of this training if you haven't done so yet.  
+You will find files for the exercises in the 'data' directory.
 
-Typing e.g. :code:`vsc-prc-find --help` will show a description of the
-recognized arguments. The command-line equivalents of the three Python
-snippets above, for example, would look like this:
+### Exercise 1: uploading data
 
-```sh 
-vsc-prc-iget '~/my_irods_collection/*.txt' -d .
-vsc-prc-find '~' -n '*.txt' --object_avu='Author;Me'
-vsc-prc-find '~' -n '*.txt' --object_avu='Author;Me' | xargs -i vsc-prc-iget {} -d .
+Make a python script that does the following: 
+
+- Make a directory called 'experiment1' in your home collection.  
+- Go to the experiment1 collection.    
+- Upload all files from the 'molecules' folder to the collection 'experiment1'
+- Give your group 'read access to the collection 'experiment1'
+- Add the AVU 'kind: organic' to any molecule starting with a 'c'.
+- Make a local directory called 'organic_molecules' (you can use a bash command here)
+- Download all data objects starting with 'c' to this new directory.
+
+
+
+<details>   
+  <summary>Solution</summary>
+
+```
+import os
+from vsc_irods.session import VSCiRODSSession
+from irods.access import iRODSAccess
+
+with VSCiRODSSession(txt='-') as session:
+
+    session.path.imkdir('experiment1')
+
+    session.path.ichdir('experiment1')
+
+    session.bulk.put('data/molecules/*')
+
+    irods_path = session.path.get_irods_cwd()
+    acl = iRODSAccess('read', irods_path, 'datateam')
+    session.permissions.set(acl, recursive = True)
+
+    avu = ('kind', 'organic')
+    session.bulk.metadata(irods_path + '/c*.xyz' , object_avu=avu, action='add')
+
+    os.mkdir('organic_molecules')
+
+    session.bulk.get(irods_path + '/c*.xyz', 'organic_molecules', recursive=True)
 ```
 
-Try to reproduce what we have done in the previous section on ipython, but this time using the vsc-prc
-command line tools
-
-### Exercice 2 
-
-Let's put everything together. Write a python program that does the following:
-
-- Create a directory in iRODS named `training`
-- Upload the directory `molecules` as subcollection of the training directory
-- Add the following metadata to the `training` collections and its subcollections:
-  - Project: Training
-  - PI: Homer Simpson
-
-- Add the following metadata to the the c\*.xyz files:
-  - SoftwareName: OpenBabel
-  - SoftwareVersion: 3.1.1
-  - SoftwareLicense: GNU General Public License, version 2
-
-- Modify the permissions of the training collection to be readable by all the lt1_es2020 group. 
-Hint: You will need to use the following  PRC functions:
-
-  - Get the collection information: 
-
-  ```py
-  coll = session.collections.get('/kuleuven_tier1_pilot/home/vsc33731/training')
-  ```
-
-  This command will store in the coll variable all the information related to the collection. 
-  The information that can be obtained:
-
-  - coll.id 
-  - coll.path
-  - coll.data_objects
-  - coll.subcollections
+</details>
 
 
-  - Set up the new permissions by doing:
 
-  ```py
-  from irods.access import iRODSAccess
-  acl = iRODSAccess('read', coll.path, 'lt1_es2020', session.zone)
-  session.permissions.set(acl)
-  ```
+### Exercise 2: Using the command line tools
 
-  where:
+The VSC-PRC also comes with a set of scripts which make it easy to use the
+Python module from a Unix shell:
 
-  - 'read' is the kind of permission we want to give (other options are 'own', 'write' and 'null')
-  - coll.path is the path of the collection we want to modify obtained the previous session.collection.get()
-  - 'lt1_es2020' is the name of the group to whom we want to give read access
-  - session.zone is the iRODS zone to which this collection belongs and will be taken from the session information (in our case: kuleuven_tier1_pilot)
+- vsc-prc-find - Search data objects in iRODS  
+- vsc-prc-iget - Download data objects  
+- vsc-prc-iput - Upload data objects  
+- vsc-prc-imkdir - Create collections  
+- vsc-prc-irm - Remove data objects/collections
+- vsc-prc-imeta - Manage metadata
+- vsc-prc-add-job-metadata - Manage job metadata
+- vsc-prc-size - Show the size of a data object/collection
 
-- Finally create a new local directory named `molecules_copy` and download all the files that were created with the OPenBabel software.
+Type any of these commands followed by '--help' to get more info (e.g. `vsc-prc-find --help`).   
+Just like the module we discussed here, these tools make it easy to work with wildcards ("*") and tildes ("~").
+
+Let's try roughly the same as above, but now using the VSC-PRC command line tools: 
+
+- Make a directory called 'experiment2' in your home collection.  
+- Upload all files from the 'molecules' folder to the collection 'experiment2'
+- Add the AVU 'kind: organic' to any molecule starting with a 'c'.
+- List all the files with the metadata 'kind: organic' to see if this worked.
+- Make a local directory called 'organic_molecules' (you can use a bash command here)
+- Download all data objects starting with 'c' to this new directory.
+
+<details>   
+  <summary>Solution</summary>
+
+  - `vsc-prc-imkdir experiment1` or `vsc-prc-imkdir ~/experiment2`    
+  - `vsc-prc-iput data/molecules/* --destination experiment2`  
+  - `vsc-prc-imeta "~/experiment2/c*" --object_avu=kind,organic --action=add`  
+  - `vsc-prc-find "~/experiment2" --object_avu='=,kind;=,organic'`  
+  - `mkdir organic_molecules`  
+  - `vsc-prc-iget experiment2/c*`
+</details>

@@ -16,7 +16,7 @@ In the directory jobsscripts, you can find template files which you can use as r
 
 # Upload the data to irods 
 
-Create a training collection and upload all the molecules directory
+Create a training collection and upload the molecules folder from the 'data' directory of this repository.  
 
 ```sh 
 vsc-prc-imkdir training

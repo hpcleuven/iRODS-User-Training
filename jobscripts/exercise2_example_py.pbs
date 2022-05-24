@@ -8,7 +8,7 @@ cd $PBS_O_WORKDIR
 
 # Add module for VSC irods tools
 module purge
-module load vsc-python-irodsclient/development
+module load vsc-python-irodsclient/0.1-python-irodsclient-0.8.4
 
 # Call a python file.py
 python calculate_template.py
