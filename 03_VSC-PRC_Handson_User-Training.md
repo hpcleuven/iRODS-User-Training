@@ -47,6 +47,16 @@ module load Python/3.7.4-GCCcore-8.3.0
 module load vsc-python-irodsclient/0.1-python-irodsclient-0.8.4
 ``` 
 
+>     
+> **Note:** The module used in this training includes both the python-irodsclient and the VSC extensions for it.    
+> However, on our HPC clusters, we also have a module with only the bare python-irodsclient (version 1.1.4), which you can use as follows:   
+> `module use /apps/leuven/<node_architecture>/2021a/modules/all`  
+> `module load python-irodsclient/1.1.4-GCCcore-10.3.0`  
+>   
+> You should replace <node_architecture> with the architecture of the (login) node you are on ('cascadelake', 'skylake' or 'broadwell').    
+>   
+
+
 Note that vsc-python-irodsclient/0.1-python-irodsclient-0.8.4 will load a python module if there is none already loaded.
 In order to have full control about which Python version is used it is recommended to prior to load the vsc-prc-python module 
 to load the Python version you want to work with.
