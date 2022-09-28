@@ -10,7 +10,7 @@ As you saw in the previous presentation, organizations can automate their data m
 
 There are two types of rules. System level rules handle complex data issues. They are determined by administrators and triggered by Policy Enforcement Points (PEP). 
 
-On the other side, we have user-defined rules. Users can trigger their rules they wrote themselves with the `irule`command. These can be written into a local file in our VSC system. You can think of these the same way as scripts in other languages like python or bash. In this tutorial, we will dive deeper into user-defined rules.
+On the other side, we have user-defined rules. Users can trigger the rules they wrote themselves with the `irule`command. These can be written into a local file in our VSC system. You can think of these the same way as scripts in other languages like python or bash. In this tutorial, we will dive deeper into user-defined rules.
 
 By the end you will be able to:
 * Execute rules through the `irule` command    
@@ -56,7 +56,7 @@ output ruleExecOut
 
 As you can see, the command `writeLine('stdout', 'your message');` is the common way to print things.
 
-In a file, only the first rule gets triggered by iRule, even . However, you can call these other rules in your first rule, as illustrated by this example:
+In a file, only the first rule gets triggered by iRule. However, you can call these other rules in your first rule, as illustrated by this example:
 
 ```
 firstRule{
@@ -116,7 +116,7 @@ output ruleExecOut
 ```
 
 You can also ask the user for input by setting the value of the variable to $.
-When running the rule, the user will be prompted to give a value.
+When running the rule, the user will be prompted to give a value. Note that you should provide the value including the apostrophes.
 After the dollar sign, you can also specify a default value, but this is not mandatory.
 
 ```
