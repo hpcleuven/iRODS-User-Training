@@ -1,7 +1,7 @@
 # ManGO portal
 
 *Prerequisites:*  
-*- a KU Leuven account*
+*-A vsc-account coupled to an iRODS account*
 
 
 The ManGO portal is a web interface for iRODS, developed at ICTS KU Leuven. 
