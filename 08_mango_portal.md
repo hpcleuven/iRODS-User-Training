@@ -290,7 +290,7 @@ However, instead of typing the attribute name, under 'Attribute name' you type `
 Let's do the exercises below!
 
 
-You can find the files used for the exercises in the [git repository](https://github.com/hpcleuven/KULeuven-iRODS-User-Training) of this training, in the 'data' folder.
+You can find the files used for the exercises in the [git repository](https://github.com/hpcleuven/iRODS-User-Training) of this training, in the 'data' folder.
 
 You can download the repository as a Zip-file by clicking on the green 'code' button and selecting 'Download ZIP'.
 Alternatively, you can clone the repository from the command line.
