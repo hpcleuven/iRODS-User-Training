@@ -343,7 +343,7 @@ In this exercise, you will use the files corpus1.txt, corpus2.txt and corpus3.tx
 
 In this exercise, you will use the file bird.JPG from data/biology, which depicts a nice specimen of the 'European roller'.
 
-- Make a Metadata schema with the name 'animals-', followed by your u- or b-number.
+- Make a Metadata schema with the name 'animals-', followed by your vsc-number.
   This schema should contain the following:
 
   - A 'name' field where the user can type the name of the animal
