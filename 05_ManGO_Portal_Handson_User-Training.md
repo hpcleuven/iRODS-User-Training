@@ -280,7 +280,7 @@ After you click on 'save', the metadata tab of your collection/data object will 
 <img align="center" src="img/mango_portal_apply_schema_2.png" width="600px">  
 
 In the search tab, you can now also search based on the schema of the metadata.  
-However, instead of typing the attribute name, under 'Attribute name' you type `mg.<schema_name>.<element-identifier>`:   
+However, instead of typing the attribute name, under 'Attribute name' you type `mgs.<schema_name>.<element-identifier>`:   
 
 <img align="center" src="img/mango_portal_search_schema_metadata.png" width="600px">  
 
